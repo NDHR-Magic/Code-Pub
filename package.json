@@ -1,0 +1,21 @@
+{
+  "name": "Project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NDHR-Magic/Project-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NDHR-Magic/Project-3/issues"
+  },
+  "homepage": "https://github.com/NDHR-Magic/Project-3#readme"
+}
