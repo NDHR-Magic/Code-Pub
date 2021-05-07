@@ -3,6 +3,7 @@ const path = require("path");
 const sequelize = require("./connection");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const controllers = require("./controllers");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -27,6 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
+app.use(controllers);
 
 // Send every request to the React app
 // Define any API routes before this runs
