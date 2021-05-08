@@ -47,6 +47,10 @@ User.init(
                 len: [8],
             },
         },
+        birth_date: {
+            type: DataTypes.STRING,
+            allowNull: false, /* mysql date format is yy-mm-dd*/
+        }
     },
     {
         hooks: {
