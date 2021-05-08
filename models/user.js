@@ -50,6 +50,11 @@ User.init(
         birth_date: {
             type: DataTypes.STRING,
             allowNull: false, /* mysql date format is yy-mm-dd*/
+        },
+        isAdmin: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     },
     {
