@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
-const sequelize = require('../connection');
-const { Model, Datatypes } = require('sequelize');
-
+const sequelize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -12,42 +11,59 @@ class User extends Model {
 User.init(
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         first_name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         last_name: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         username: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
-                len:[4, 25]
+                len: [4, 25]
             }
         },
         email: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
                 isEmail: true,
-            }
+            },
         },
         password: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [8],
             },
         },
+    },
+    {
+        hooks: {
+            beforeCreate: async (newUser) => {
+                newUser.password = await bcrypt.hash(newUser.password, 10);
+                return newUser;
+            },
+            beforeUpdate: async (updatedUser) => {
+                updatedUser.password = await bcrypt.hash(updatedUser.password, 10);
+                return updatedUser;
+            },
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user',
     }
 );
 
