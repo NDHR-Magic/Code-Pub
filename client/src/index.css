@@ -44,4 +44,9 @@ code {
   justify-content: space-around !important;
 }
 .drinkApp .drinkAppChoices button {margin: 20px;}
+
+.particles {
+  position: relative;
+  z-index: -5;
+}
 /* End Drink App page */
