@@ -4,4 +4,5 @@
     padding: 4px 8px;
     border-radius: 6px;
     border: 0.5px solid #555;
+    cursor: pointer;
 }
