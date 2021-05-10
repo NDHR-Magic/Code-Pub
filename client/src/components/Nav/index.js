@@ -21,7 +21,7 @@ function Nav() {
                     ) : (
                         <div id="wide-nav" className="nav-bar flex-between">
                             <div className="nav-left flex-between flex-align">
-                                <h1>Logo</h1>
+                                <Link to="/"><h1>Logo</h1></Link>
                                 <Link to="/menu">Menu</Link>
                                 <Link to="/events">Events</Link>
                                 <Link to="/store">Store</Link>

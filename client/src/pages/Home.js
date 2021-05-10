@@ -1,10 +1,9 @@
 import React from "react";
+import Header from "../components/Header";
 
 function Home() {
     return (
-        <div>
-            test
-        </div>
+        <Header><h1>Code Pub (name pending)</h1></Header>
     )
 }
 
