@@ -22,16 +22,16 @@ function Nav() {
                         <div id="wide-nav" className="nav-bar flex-between">
                             <div className="nav-left flex-between flex-align">
                                 <h1>Logo</h1>
-                                <Link to="#">Menu</Link>
-                                <Link to="#">Events</Link>
-                                <Link to="#">Store</Link>
-                                <Link to="#">Drink App</Link>
+                                <Link to="/menu">Menu</Link>
+                                <Link to="/events">Events</Link>
+                                <Link to="/store">Store</Link>
+                                <Link to="mixer">Drink App</Link>
                             </div>
 
                             <div className="nav-right flex-between flex-align">
-                                <Link to="#" className="nav-link custom-flex flex-align">Login</Link>
+                                <Link to="/login" className="nav-link custom-flex flex-align">Login</Link>
                                 <div className="cart">
-                                    <i className="fas fa-shopping-cart wide"></i>
+                                    <Link to="/cart"><i className="fas fa-shopping-cart wide"></i></Link>
                                     <div className="cart-count custom-flex flex-align">0</div>
                                 </div>
                             </div>
