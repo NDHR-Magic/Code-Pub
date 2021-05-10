@@ -1,9 +1,13 @@
 import React from "react";
 import Header from "../components/Header";
+import Carousel from "../components/Carousel";
 
 function Home() {
     return (
-        <Header><h1>Code Pub (name pending)</h1></Header>
+        <div>
+            <Header><h1>Code Pub (name pending)</h1></Header>
+            <Carousel />
+        </div>
     )
 }
 
