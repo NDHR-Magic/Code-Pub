@@ -17,17 +17,17 @@ function Carousel(props) {
     const [imageIndex, setImageIndex] = useState(0);
     const [dots, setDots] = useState([]);
 
-    const imgUrls = ['https://via.placeholder.com/800x450?text=1', "https://via.placeholder.com/800x450?text=2", "https://via.placeholder.com/800x450?text=3"];
+    const imgUrls = ['./Images/JSBeer-min.png', "./Images/Bar-laptop.png", "./Images/bar.png"];
 
 
     useEffect(() => {
         const currentDots = []
-        for (const img of imgUrls) {
-            currentDots.push(img);
+        for (let i = 0; i < imgUrls.length; i++) {
+            currentDots.push(i);
         }
 
         setDots(currentDots);
-    }, [])
+    }, [imgUrls.length])
 
     const previousSlide = () => {
         const lastIndex = imgUrls.length - 1;
