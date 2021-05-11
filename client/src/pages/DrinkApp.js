@@ -150,7 +150,8 @@ function DrinkApp() {
             {/* Show components or choices. If showComponent is true, hide buttons and display selected component */}
             {showComponent ? <Choices hidden={true} /> : <Choices hidden={false} drinkFunction={drinkFunction} rouletteFunction={rouletteFunction} />}
             {/* Show component selected */}
-            {(showComponent && component === "drink") ? <DrinkRandomizer /> : <DrinkRoulette />}
+            {(showComponent && component === "drink") ? <DrinkRandomizer /> : ""}
+            {(showComponent && component === "roulette") ? <DrinkRoulette /> : ""}
         </div>
     )
 }

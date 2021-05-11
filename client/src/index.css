@@ -52,7 +52,7 @@ body {
 
 .drinkApp .drinkAppChoices {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   justify-content: space-around !important;
 }
 .drinkApp .drinkAppChoices button {margin: 20px;}
