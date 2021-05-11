@@ -1,0 +1,46 @@
+.carousel {
+    width: 80%;
+    height: 450px;
+    margin: 5px auto;
+    position: relative;
+    max-width: 900px;
+}
+
+.dot-holder {
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+.carousel-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #555;
+    margin: 0 10px;
+}
+.carousel-dot.active {
+    background: #111 !important;
+}
+
+.image-slide {
+    height: 100%;
+    width: 100%;
+}
+.slide-arrow.left, .slide-arrow.right {
+    position: absolute;
+    top: 49%;
+    font-size: 24px;
+    color: crimson;
+    
+}
+.slide-arrow.left{left: 15px;}
+.slide-arrow.right{right: 15px;}
+
+@media only screen and (max-width: 550px) {
+    .carousel {
+        height: 300px;
+        width: 95%;
+    }
+}

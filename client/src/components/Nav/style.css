@@ -1,0 +1,86 @@
+.nav-bar {
+    width: 100%;
+    height: 80px;
+    background: rgb(0,128,128);
+    background: -moz-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008080",endColorstr="#ffffff",GradientType=1);   
+}
+
+.nav-bar h1 {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 30px;
+}
+
+.nav-bar.flex-between, .nav-bar .flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-left, .nav-right {
+    height: 100%;
+    font-size: 18px;
+}
+
+.nav-left {
+    width: 45%;
+    padding-left: 18px;
+}
+
+.nav-right {
+    width: 20%;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link {
+    background: rgb(36, 130, 253);
+    width: 70px;
+    border-radius: 6px;
+    height: 35px;
+}
+
+.nav-bar .fas.wide {
+    font-size: 32px;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 24px;
+    left: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.cart {
+    position: relative;
+    padding-right: 30px;
+    height: 100%;
+    width: 60px;
+}
+
+.cart-count {
+    background: teal;
+    color: #fff;
+    font-size: 1.2em;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    position: absolute;
+    top: 39px;
+    left: 28px;
+}
+
+.nav-bar .fas.small {
+    font-size: 30px;
+    padding-right: 25px;
+}
+
+.nav-bar .flex-end {
+    display: flex;
+    justify-content: flex-end;
+}

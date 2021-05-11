@@ -1,3 +1,9 @@
+html, body {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+#root {width: 100%; height: 100%;}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +17,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-flex{
+  display: flex;
+  justify-content: center;
+}
+.flex-align {
+  align-items: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.hidden {display: none;}
+
+/* Drink App page */
+.drinkApp {
+  width: 100%;
+  height: 100%;
+}
+
+.drinkApp .drinkAppChoices {
+  width: 100%;
+  height: 100%;
+  justify-content: space-around !important;
+}
+.drinkApp .drinkAppChoices button {margin: 20px;}
+
+.particles {
+  position: relative;
+  z-index: -5;
+}
+/* End Drink App page */
