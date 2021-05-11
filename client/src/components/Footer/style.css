@@ -1,0 +1,11 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 60px !important;
+}
+
+footer a {
+    color: #fff;
+    font-size: 26px;
+    text-decoration: none;
+}
