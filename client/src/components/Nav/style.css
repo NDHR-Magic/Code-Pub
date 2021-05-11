@@ -31,7 +31,9 @@
 }
 
 .nav-right {
-    width: 20%;
+    width: 16%;
+    max-width: 200px;
+    padding-right: 15px;
 }
 
 .nav-bar a {
