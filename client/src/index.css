@@ -1,21 +1,12 @@
-html, body {
+* {box-sizing: border-box;}
+
+html, body, #root {
   width: 100%;
   min-height: 100%;
-  height: 100%;
-}
-#root {width: 100%; height: 100%;}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
 }
 
 .custom-flex{
@@ -32,6 +23,27 @@ code {
 
 .hidden {display: none;}
 
+/* HomePage */
+.home {
+  background: #333;
+  color: #fff;
+  height: 100%;
+  font-size: 1.3em;
+}
+.featuredEvent {
+  width: 100%;
+  padding: 6px 0 10px 0;
+  margin: 0;
+}
+.featuredEvent h2 {margin: 0; padding: 5px;}
+.featuredEvent .event-text {margin: 3px 0;}
+
+.home .aboutText {
+  width: 80%;
+  margin: 15px auto;
+  padding: 10px;
+}
+/* End homePage */
 /* Drink App page */
 .drinkApp {
   width: 100%;

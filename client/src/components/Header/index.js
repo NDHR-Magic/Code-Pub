@@ -3,7 +3,7 @@ import "./style.css";
 
 function Header(props) {
     return (
-        <header className="center-text">
+        <header className="center-text header">
             {props.children}
         </header>
     )
