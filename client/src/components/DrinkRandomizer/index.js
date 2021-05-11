@@ -2,8 +2,18 @@ import React from "react";
 import Header from "../Header";
 import Button from "../Button";
 import "./style.css";
+import searchDrink from "../../utils/CocktailApi";
 
 const DrinkRandomizer = () => {
+    const placeHolder = async (e) => {
+        e.preventDefault();
+
+        const data = await searchDrink();
+        const drinks = data.data.drinks;
+        const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
+        console.log(randomDrink);
+    }
+
     return (
         <div className="drink-api">
             <Header><h1>Partying at Home?</h1></Header>
@@ -16,7 +26,7 @@ const DrinkRandomizer = () => {
                     <option value="beer">Beer</option>
                 </select>
                 <div className="custom-flex">
-                    <Button>Get random drink!</Button>
+                    <Button onClickEvent={placeHolder}>Get random drink!</Button>
                 </div>
             </form>
         </div>
