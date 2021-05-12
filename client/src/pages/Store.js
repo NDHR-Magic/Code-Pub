@@ -10,6 +10,8 @@ function Store() {
     //     setStoreItems(data)
     // }, [])
 
+//    handleSelectChange function here
+
     return (
         <div className="container">
         <Filter></Filter>
