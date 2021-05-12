@@ -3,21 +3,17 @@ import React from 'react';
 function Filter(props) {
     return (
         <div className="row">
-            <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Filter By:
-                    </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a className="dropdown-item" href="#">Price (Highest to Lowest)</a></li>
-                    <li><a className="dropdown-item" href="#">Price (Lowest to Highest)</a></li>
-                    <li><a className="dropdown-item" href="#">Clothing</a></li>
-                    <li><a className="dropdown-item" href="#">Other</a></li>
-                </ul>
+            <div className="col-1">
+            <select className="form-select" onClick={props.handleSelectChange}>
+                <option selected>Filter By:</option>
+                <option value="priceHigh">Price(Lowest to Highest)</option>
+                <option value="priceLow">Price(Highest to Lowest)</option>
+                <option value="clothing">Clothing</option>
+                <option value="other">Other</option>
+            </select>
             </div>
-
         </div>
     )
-
 }
 
 export default Filter;
