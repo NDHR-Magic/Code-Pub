@@ -39,6 +39,11 @@ class Roulette extends React.Component {
     componentDidMount() {
         this.drawRouletteWheel();
     }
+    componentWillUnmount() {
+        this.setState({});
+
+        clearTimeout(this.spinTimer);
+    }
 
     byte2Hex(n) {
         const nybHexString = '0123456789ABCDEF';
