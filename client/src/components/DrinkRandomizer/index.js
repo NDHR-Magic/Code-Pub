@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header";
 import Button from "../Button";
+import Drink from "../Drink";
 import "./style.css";
 import searchDrink from "../../utils/CocktailApi";
 
 const DrinkRandomizer = () => {
     const placeHolder = async (e) => {
         e.preventDefault();
+
+
 
         const data = await searchDrink();
         const drinks = data.data.drinks;
@@ -29,6 +32,10 @@ const DrinkRandomizer = () => {
                     <Button onClickEvent={placeHolder}>Get random drink!</Button>
                 </div>
             </form>
+
+            <Drink
+
+            />
         </div>
     )
 }
