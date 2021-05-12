@@ -14,7 +14,6 @@ function Filter(props) {
             </div>
         </div>
     )
-
 }
 
 export default Filter;
