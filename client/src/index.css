@@ -58,3 +58,43 @@ body {
   z-index: -5;
 }
 /* End Drink App page */
+/* About page */
+.about-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: lightpink;
+}
+.about-container .left,
+.about-container .right {
+  width: 50%;
+  margin: 0;
+  max-width: 550px;
+  background: #fff;
+}
+
+.about-container .right img,
+.about-container .left img {
+  width: 100%;
+  padding: 0 !important;
+}
+
+.about-container .left .left-text,
+.about-container .right .right-text {
+  padding: 20px;
+  font-size: 20px;
+}
+/* End about page */
+
+
+@media only screen and (max-width: 900px) {
+  .about-container {
+    display: initial;
+  }
+
+  .about-container .left, 
+  .about-container .right {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
