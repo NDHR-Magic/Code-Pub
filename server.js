@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const sequelize = require("./connection");
+const sequelize = require("./config/connection");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const controllers = require("./controllers");
@@ -37,6 +37,8 @@ app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function () {
-    console.log(`🌎 ==> API server now on port ${PORT}!`);
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, function () {
+        console.log(`🌎 ==> API server now on port ${PORT}!`);
+    });
 });

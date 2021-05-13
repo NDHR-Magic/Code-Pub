@@ -24,3 +24,9 @@
 .drink-api form button {
     margin: 10px 0;
 }
+
+.drink-api .recommendation {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: lightpink;
+}
