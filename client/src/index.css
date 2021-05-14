@@ -85,7 +85,34 @@ body {
   font-size: 20px;
 }
 /* End about page */
+/* Store page */
+.store .card-body {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.store img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.store .card-body h3 {
+  margin: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.store .filter-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.store select {
+  width: 150px;
+  margin: 12px;
+}
+/* End Store page */
 
 @media only screen and (max-width: 900px) {
   .about-container {
