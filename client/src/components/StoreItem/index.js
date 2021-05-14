@@ -2,6 +2,11 @@ import React from 'react';
 import Button from "../Button";
 
 function StoreItem({ itemName, itemImg, itemPrice }) {
+    const addToCart = (e) => {
+        e.preventDefault();
+        console.log("todo asshole. take a hike.")
+    }
+
     return (
         <div className="col-lg-4 col-sm-6">
             <div className="card">
@@ -13,7 +18,7 @@ function StoreItem({ itemName, itemImg, itemPrice }) {
                     <h3>{`$${itemPrice}`}</h3>
 
                     <div className="custom-flex" style={{ width: "100%" }}>
-                        <Button>Add to cart</Button>
+                        <Button onClickEvent={addToCart}>Add to cart</Button>
                     </div>
                 </div>
             </div>
