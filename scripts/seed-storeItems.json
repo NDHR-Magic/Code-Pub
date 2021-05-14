@@ -3,5 +3,15 @@
         "name": "T-shirt",
         "image": "https://www.loveyourdog.com/wp-content/uploads/2020/04/Chihuahua-Relaxing-Indoors.jpg",
         "price": 19.99
+    },
+    {
+        "name": "React Shot Glass",
+        "image": "./Images/StoreItems/react-shot-glass.png",
+        "price": 12.99
+    },
+    {
+        "name": "Code Pub Mousepad",
+        "image": "./Images/StoreItems/Mouse-pad.png",
+        "price": 14.99
     }
 ]
