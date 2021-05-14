@@ -46,20 +46,22 @@ function Store() {
     //    handleSelectChange function here
 
     return (
-        <div className="container store">
-            <div className="filter-container">
-                <Filter></Filter>
-            </div>
+        <div className="store">
+            <div className="container">
+                <div className="filter-container">
+                    <Filter></Filter>
+                </div>
 
-            <div className="row">
-                {placeholderStore.map((item) => (
-                    <StoreItem
-                        itemName={item.name}
-                        itemImg={item.image}
-                        itemPrice={item.price}
-                        key={item.id}
-                    />
-                ))}
+                <div className="row">
+                    {placeholderStore.map((item) => (
+                        <StoreItem
+                            itemName={item.name}
+                            itemImg={item.image}
+                            itemPrice={item.price}
+                            key={item.id}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )

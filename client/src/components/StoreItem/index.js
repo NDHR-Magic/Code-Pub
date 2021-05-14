@@ -17,7 +17,7 @@ function StoreItem({ itemName, itemImg, itemPrice }) {
                     <img src={itemImg} alt={itemName}></img>
                     <h3>{`$${itemPrice}`}</h3>
 
-                    <div className="custom-flex" style={{ width: "100%" }}>
+                    <div className="custom-flex" style={{ width: "100%", height: "55px" }}>
                         <Button onClickEvent={addToCart}>Add to cart</Button>
                     </div>
                 </div>
