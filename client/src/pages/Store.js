@@ -1,47 +1,30 @@
 import React, { useEffect, useState } from "react";
 import Filter from "../components/Filter";
 import StoreItem from "../components/StoreItem";
-
-const placeholderStore = [
-    {
-        "id": 1,
-        "name": "T-shirt",
-        "image": "https://www.loveyourdog.com/wp-content/uploads/2020/04/Chihuahua-Relaxing-Indoors.jpg",
-        "price": 19.99
-    },
-    {
-        "id": 2,
-        "name": "React Shot Glass",
-        "image": "./Images/StoreItems/react-shot-glass.png",
-        "price": 12.99
-    },
-    {
-        "id": 3,
-        "name": "Code Pub Mousepad",
-        "image": "./Images/StoreItems/Mouse-pad.png",
-        "price": 14.99
-    },
-    {
-        "id": 4,
-        "name": "Code Pub Mousepad",
-        "image": "./Images/StoreItems/Mouse-pad.png",
-        "price": 14.99
-    },
-    {
-        "id": 5,
-        "name": "Code Pub Mousepad",
-        "image": "./Images/StoreItems/Mouse-pad.png",
-        "price": 14.99
-    }
-]
+import getProducts from "../utils/StoreAPI.js";
+import LoadingScreen from "../components/LoadingScreen";
+import MessageBox from "../components/MessageBox";
 
 function Store() {
-    // const [storeItems, setStoreItems] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
-    // useEffect(async () => {
-    //     const data = await API.blah
-    //     setStoreItems(data)
-    // }, [])
+    useEffect(() => {
+        const getProductData = async () => {
+            try {
+                setLoading(true);
+                const productData = await getProducts();
+                setLoading(false);
+
+                setProducts(productData.data);
+            } catch (err) {
+                console.log(err);
+                setError(err);
+            }
+        }
+        getProductData();
+    }, [])
 
     //    handleSelectChange function here
 
@@ -53,14 +36,20 @@ function Store() {
                 </div>
 
                 <div className="row">
-                    {placeholderStore.map((item) => (
-                        <StoreItem
-                            itemName={item.name}
-                            itemImg={item.image}
-                            itemPrice={item.price}
-                            key={item.id}
-                        />
-                    ))}
+                    {loading ? (
+                        <LoadingScreen />
+                    ) : error ? (
+                        <MessageBox>{error}</MessageBox>
+                    ) : (
+                        products.map((product) => (
+                            <StoreItem
+                                key={product.id}
+                                itemName={product.name}
+                                itemPrice={product.price}
+                                itemImg={product.image}
+                            />
+                        ))
+                    )}
                 </div>
             </div>
         </div>
