@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Filter from "../components/Filter";
 import StoreItem from "../components/StoreItem";
-import getProducts from "../utils/StoreAPI.js";
+import { getProducts } from "../utils/StoreAPI.js";
 import LoadingScreen from "../components/LoadingScreen";
 import MessageBox from "../components/MessageBox";
 
