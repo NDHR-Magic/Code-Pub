@@ -3,18 +3,21 @@
         "name": "T-shirt",
         "image": "https://www.loveyourdog.com/wp-content/uploads/2020/04/Chihuahua-Relaxing-Indoors.jpg",
         "price": 19.99,
-        "description": "This is a t-shirt"
+        "description": "This is a t-shirt",
+        "amount_in_stock": 0
     },
     {
         "name": "React Shot Glass",
         "image": "./Images/StoreItems/react-shot-glass.png",
         "price": 12.99,
-        "description": "A shot glass with the react.js logo"
+        "description": "A shot glass with the react.js logo",
+        "amount_in_stock": 10
     },
     {
         "name": "Code Pub Mousepad",
         "image": "./Images/StoreItems/Mouse-pad.png",
         "price": 14.99,
-        "description": "A mouse pad with coding image"
+        "description": "A mouse pad with coding image",
+        "amount_in_stock": 10
     }
 ]
