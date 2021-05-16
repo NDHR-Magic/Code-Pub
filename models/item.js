@@ -23,10 +23,18 @@ Item.init(
             unique: true,
         },
         price: {
-            type: DataTypes.DECIMAL(10,2),
+            type: DataTypes.DECIMAL(10, 2),
             allowNull: false
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        amount_in_stock: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         }
-
     },
     {
         sequelize,

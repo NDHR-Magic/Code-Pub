@@ -8,6 +8,7 @@ import DrinkApp from "./pages/DrinkApp";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import About from "./pages/About";
+import ProductDetails from "./pages/ProductDetails";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 
@@ -22,6 +23,10 @@ function App() {
 
       <Route exact path="/store">
         <Store />
+      </Route>
+
+      <Route path="/store/:id">
+        <ProductDetails />
       </Route>
 
       <Route exact path="/menu">

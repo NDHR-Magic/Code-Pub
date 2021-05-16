@@ -19,6 +19,9 @@ body {
 
 .hidden {display: none;}
 
+.success {color: #5cb85c}
+.danger {color: #d9534f}
+
 /* HomePage */
 .home {
   color: #fff;
@@ -91,11 +94,11 @@ body {
 .store {padding-bottom: 20px;}
 
 .store .card {
-  height: 500px;
-  margin: 15px 0;
+  height: 450px;
+  margin: 15px auto;
   max-width: 380px;
 }
-
+.store .card .card-header {font-size: 18px;}
 .store .card-body {
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +107,7 @@ body {
 .store img {
   width: 100%;
   max-width: 450px;
-  height: 250px;
+  height: 300px;
 }
 
 .store .card-body h3 {
@@ -124,6 +127,39 @@ body {
   margin: 12px;
 }
 /* End Store page */
+/* product details page */
+.product-details-container {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.product-details-container img {
+  width: 100%;
+}
+
+.product-details-container .card.card-body {
+  padding: 10px;
+  background: lightcyan;
+}
+
+.product-details-container .card.card-body .customBtn {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.product-details-container .card.card-body ul li .custom-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-details-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* End product details page */
 
 @media only screen and (max-width: 900px) {
   .about-container {

@@ -1,49 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Filter from "../components/Filter";
 import StoreItem from "../components/StoreItem";
-
-const placeholderStore = [
-    {
-        "id": 1,
-        "name": "T-shirt",
-        "image": "https://www.loveyourdog.com/wp-content/uploads/2020/04/Chihuahua-Relaxing-Indoors.jpg",
-        "price": 19.99
-    },
-    {
-        "id": 2,
-        "name": "React Shot Glass",
-        "image": "./Images/StoreItems/react-shot-glass.png",
-        "price": 12.99
-    },
-    {
-        "id": 3,
-        "name": "Code Pub Mousepad",
-        "image": "./Images/StoreItems/Mouse-pad.png",
-        "price": 14.99
-    },
-    {
-        "id": 4,
-        "name": "Code Pub Mousepad",
-        "image": "./Images/StoreItems/Mouse-pad.png",
-        "price": 14.99
-    },
-    {
-        "id": 5,
-        "name": "Code Pub Mousepad",
-        "image": "./Images/StoreItems/Mouse-pad.png",
-        "price": 14.99
-    }
-]
+import LoadingScreen from "../components/LoadingScreen";
+import MessageBox from "../components/MessageBox";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllProducts } from "../actions/productActions";
 
 function Store() {
-    // const [storeItems, setStoreItems] = useState([]);
+    const dispatch = useDispatch();
+    const productList = useSelector((state) => state.productList)
+    const { loading, error, products } = productList;
 
-    // useEffect(async () => {
-    //     const data = await API.blah
-    //     setStoreItems(data)
-    // }, [])
+    console.log(productList)
 
-    //    handleSelectChange function here
+    useEffect(() => {
+        dispatch(getAllProducts());
+    }, [])
 
     return (
         <div className="store">
@@ -51,16 +23,21 @@ function Store() {
                 <div className="filter-container">
                     <Filter></Filter>
                 </div>
-
                 <div className="row">
-                    {placeholderStore.map((item) => (
-                        <StoreItem
-                            itemName={item.name}
-                            itemImg={item.image}
-                            itemPrice={item.price}
-                            key={item.id}
-                        />
-                    ))}
+                    {loading ? (
+                        <LoadingScreen />
+                    ) : error ? (
+                        <MessageBox variant="danger">{error}</MessageBox>
+                    ) : (
+                        products.map((product) => (
+                            <StoreItem
+                                key={product.id}
+                                itemName={product.name}
+                                itemPrice={product.price}
+                                itemImg={product.image}
+                            />
+                        ))
+                    )}
                 </div>
             </div>
         </div>
