@@ -98,7 +98,7 @@ body {
   margin: 15px auto;
   max-width: 380px;
 }
-
+.store .card .card-header {font-size: 18px;}
 .store .card-body {
   display: flex;
   flex-wrap: wrap;

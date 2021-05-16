@@ -1,9 +1,10 @@
 import React from 'react';
+import "./style.css"
 
-const MessageBox = () => {
+const MessageBox = (props) => {
     return (
-        <div>
-
+        <div className={`message-box alert alert-${props.variant || 'info'}`}>
+            {props.children}
         </div>
     );
 };

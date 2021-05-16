@@ -1,9 +1,10 @@
 import React from 'react';
+import "./style.css";
 
 const LoadingScreen = () => {
     return (
-        <div>
-
+        <div className="loading">
+            <i className="fa fa-spinner fa-spin"></i> Loading...
         </div>
     );
 };

@@ -39,7 +39,7 @@ function Store() {
                     {loading ? (
                         <LoadingScreen />
                     ) : error ? (
-                        <MessageBox>{error}</MessageBox>
+                        <MessageBox variant="danger">{error}</MessageBox>
                     ) : (
                         products.map((product) => (
                             <StoreItem

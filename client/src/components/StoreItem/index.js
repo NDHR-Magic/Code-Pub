@@ -11,7 +11,7 @@ function StoreItem({ itemName, itemImg, itemPrice }) {
         <div className="col-lg-4 col-sm-6">
             <div className="card">
                 <div className="card-header">
-                    <h1 className="fs-2 center-text">{itemName}</h1>
+                    <h1 className="fs-3 center-text">{itemName}</h1>
                 </div>
                 <div className="card-body">
                     <img src={itemImg} alt={itemName}></img>
