@@ -2,16 +2,19 @@
     {
         "name": "T-shirt",
         "image": "https://www.loveyourdog.com/wp-content/uploads/2020/04/Chihuahua-Relaxing-Indoors.jpg",
-        "price": 19.99
+        "price": 19.99,
+        "description": "This is a t-shirt"
     },
     {
         "name": "React Shot Glass",
         "image": "./Images/StoreItems/react-shot-glass.png",
-        "price": 12.99
+        "price": 12.99,
+        "description": "A shot glass with the react.js logo"
     },
     {
         "name": "Code Pub Mousepad",
         "image": "./Images/StoreItems/Mouse-pad.png",
-        "price": 14.99
+        "price": 14.99,
+        "description": "A mouse pad with coding image"
     }
 ]
