@@ -1,32 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Filter from "../components/Filter";
 import StoreItem from "../components/StoreItem";
-import { getProducts } from "../utils/StoreAPI.js";
 import LoadingScreen from "../components/LoadingScreen";
 import MessageBox from "../components/MessageBox";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllProducts } from "../actions/productActions";
 
 function Store() {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const dispatch = useDispatch();
+    const productList = useSelector((state) => state.productList)
+    const { loading, error, products } = productList;
+
+    console.log(productList)
 
     useEffect(() => {
-        const getProductData = async () => {
-            try {
-                setLoading(true);
-                const productData = await getProducts();
-                setLoading(false);
-
-                setProducts(productData.data);
-            } catch (err) {
-                console.log(err);
-                setError(err);
-            }
-        }
-        getProductData();
+        dispatch(getAllProducts());
     }, [])
-
-    //    handleSelectChange function here
 
     return (
         <div className="store">
@@ -34,7 +23,6 @@ function Store() {
                 <div className="filter-container">
                     <Filter></Filter>
                 </div>
-
                 <div className="row">
                     {loading ? (
                         <LoadingScreen />
