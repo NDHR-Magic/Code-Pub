@@ -15,7 +15,7 @@ function Store() {
 
     useEffect(() => {
         dispatch(getAllProducts());
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="store">
