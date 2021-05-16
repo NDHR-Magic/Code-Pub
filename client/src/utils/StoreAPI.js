@@ -1,8 +1,10 @@
 import axios from "axios";
 
-const getProducts = async () => {
+export const getProducts = async () => {
     const results = await axios("http://localhost:3000/api/products");
     return results;
 }
 
-export default getProducts;
+export const getProductById = async (id) => {
+    return await axios(`http://localhost:3000/api/products/${id}`);
+}
