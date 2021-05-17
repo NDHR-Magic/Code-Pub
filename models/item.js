@@ -16,6 +16,7 @@ Item.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         },
         image: {
             type: DataTypes.STRING,
@@ -38,7 +39,7 @@ Item.init(
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'item',
