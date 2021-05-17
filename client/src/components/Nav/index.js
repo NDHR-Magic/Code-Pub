@@ -25,7 +25,7 @@ function Nav() {
                                 <Link to="/menu">Menu</Link>
                                 <Link to="/events">Events</Link>
                                 <Link to="/store">Store</Link>
-                                <Link to="mixer">Drink App</Link>
+                                <Link to="/mixer">Drink App</Link>
                             </div>
 
                             <div className="nav-right flex-between flex-align">
