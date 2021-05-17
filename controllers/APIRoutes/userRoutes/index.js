@@ -6,8 +6,6 @@ router.post("/login", async (req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
 
-        const user = userData.get({ plain: true });
-
         if (!userData) {
             res
                 .status(400)
@@ -24,11 +22,11 @@ router.post("/login", async (req, res) => {
         }
 
         res.json({
-            id: user.id,
-            name: user.username,
-            email: user.email,
-            isAdmin: user.isAdmin,
-            token: generateToken(user)
+            id: userData.id,
+            name: userData.username,
+            email: userData.email,
+            isAdmin: userData.isAdmin,
+            token: generateToken(userData)
         });
 
     } catch (e) {
