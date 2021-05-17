@@ -3,8 +3,15 @@ import React from "react";
 function Menu() {
     return (
         <div>
-            menu
-        </div>
+            <title className="titleMenu">
+                Menu
+            </title>
+            <div className="foodHeaders">
+                <div className="appsTitle col">Starters</div>
+                <div className="mainCourse col">Main Dishes</div>
+                <div className="lightOpt col">Lighter Options</div>
+            </div>
+        </div >
     )
 }
 
