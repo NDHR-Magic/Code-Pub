@@ -41,9 +41,7 @@ function App() {
         <DrinkApp />
       </Route>
 
-      <Route exact path="/cart">
-        <Cart />
-      </Route>
+      <Route path="/cart/:productId" component={Cart} exact />
 
       <Route exact path="/login">
         <Login />
