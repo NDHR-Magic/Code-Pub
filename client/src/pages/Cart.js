@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, useLocation, Link, withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import MessageBox from "../components/MessageBox";
 import Button from "../components/Button";
 
@@ -25,9 +25,9 @@ function Cart(props) {
     }, [dispatch, productId, qty]);
 
     // Remove item from cart
-    const removeFromCart = (e, product) => {
+    const removeFromCartHandler = (e, product) => {
         e.preventDefault();
-
+        dispatch(removeFromCart(product));
     }
 
     const checkoutHandler = (e) => {
@@ -67,7 +67,7 @@ function Cart(props) {
                                                 ${item.price}
                                             </div>
                                             <div>
-                                                <Button bg={"crimson"} color={"#fff"} onClickEvent={removeFromCart} args={item.product}>Remove</Button>
+                                                <Button bg={"crimson"} color={"#fff"} onClickEvent={removeFromCartHandler} args={item.product}>Remove</Button>
                                             </div>
                                         </div>
                                     </li>

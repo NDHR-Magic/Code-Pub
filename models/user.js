@@ -47,10 +47,6 @@ User.init(
                 len: [8],
             },
         },
-        birth_date: {
-            type: DataTypes.STRING,
-            allowNull: false, /* mysql date format is yy-mm-dd*/
-        },
         isAdmin: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
@@ -69,7 +65,7 @@ User.init(
             },
         },
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
