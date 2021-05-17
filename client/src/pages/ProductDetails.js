@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, withRouter } from "react-router-dom";
 import { getProduct } from '../actions/productActions';
 import Button from "../components/Button";
 import LoadingScreen from "../components/LoadingScreen";
@@ -8,9 +8,15 @@ import MessageBox from "../components/MessageBox";
 
 const ProductDetails = (props) => {
     const dispatch = useDispatch();
-    const productDetails = useSelector((state) => state.productDetails)
+    const productDetails = useSelector((state) => state.productDetails);
+    const [qty, setQty] = useState(1);
+
     const { loading, error, product } = productDetails;
     const { id } = useParams();
+
+    const addToCartHandler = () => {
+        props.history.push(`/cart/${id}?qty=${qty}`);
+    }
 
     useEffect(() => {
         dispatch(getProduct(id));
@@ -72,13 +78,31 @@ const ProductDetails = (props) => {
                                 </li>
                                 <li>
                                     <div className="custom-row">
-                                        <div>Quantity</div>
+                                        <div>Remaining</div>
                                         <div>{product.amount_in_stock} left in stock!</div>
                                     </div>
                                 </li>
-                                <li>
-                                    <Button>Add to Cart</Button>
-                                </li>
+                                {product.amount_in_stock ? (
+                                    <>
+                                        <li>
+                                            <div className="custom-row">
+                                                <div>Quantity</div>
+                                                <div>
+                                                    <select value={qty} onChange={e => setQty(e.target.value)}>
+                                                        {[...Array(product.amount_in_stock).keys()].map(
+                                                            i => (
+                                                                <option key={i + 1} value={i + 1}>{i + 1}</option>
+                                                            )
+                                                        )}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <Button onClickEvent={addToCartHandler}>Add to Cart</Button>
+                                        </li>
+                                    </>
+                                ) : <></>}
                             </ul>
                         </div>
                     </div>
@@ -88,4 +112,4 @@ const ProductDetails = (props) => {
     );
 };
 
-export default ProductDetails;
+export default withRouter(ProductDetails);

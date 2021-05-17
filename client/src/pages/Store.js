@@ -32,6 +32,7 @@ function Store() {
                         products.map((product) => (
                             <StoreItem
                                 key={product.id}
+                                itemId={product.id}
                                 itemName={product.name}
                                 itemPrice={product.price}
                                 itemImg={product.image}
