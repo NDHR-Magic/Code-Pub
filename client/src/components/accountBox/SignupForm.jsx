@@ -1,4 +1,6 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
+import { withRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   BoldLink,
   BoxContainer,
@@ -9,8 +11,10 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
+import { register } from "../../actions/userActions";
 
-export function SignupForm(props) {
+function SignupForm(props) {
+  const dispatch = useDispatch();
   const { switchToSignin } = useContext(AccountContext);
   const first_nameRef = useRef('');
   const last_nameRef = useRef('');
@@ -19,9 +23,25 @@ export function SignupForm(props) {
   const passwordRef = useRef('');
   const confirmRef = useRef('');
 
+  const redirect = props.location.searc ? props.location.search.split("=")[1] : "/";
+
+  const userRegister = useSelector(state => state.userRegister);
+  const { userInfo, loading, error } = userRegister;
+
   const submitHandler = (e) => {
     e.preventDefault();
-  }
+    if (passwordRef.current.value === confirmRef.current.value) {
+      dispatch(register(first_nameRef.current.value, last_nameRef.current.value, usernameRef.current.value, emailRef.current.value, passwordRef.current.value));
+    } else {
+      alert("passwords dont match");
+    }
+  };
+
+  useEffect(() => {
+    if (userInfo) {
+      props.history.push(redirect);
+    }
+  }, [props.history, redirect, userInfo]);
 
   return (
 
@@ -47,3 +67,5 @@ export function SignupForm(props) {
 
   );
 }
+
+export default withRouter(SignupForm);
