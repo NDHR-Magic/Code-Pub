@@ -29,8 +29,8 @@ const ProductDetails = (props) => {
             ) : error ? (
                 <MessageBox variant="danger">{error}</MessageBox>
             ) : (
-                <div className="product-details-container row">
-                    <div className="col-5">
+                <div className="product-details-container container row">
+                    <div className="col-lg-5">
                         {product.image[1] === "/" ? (
                             <img src={`../${product.image}`} alt={product.name} />
                         ) : (
@@ -38,7 +38,7 @@ const ProductDetails = (props) => {
                         )}
                     </div>
 
-                    <div className="product-details col-3 mx-2">
+                    <div className="product-details col-lg-3 mx-2">
                         <ul>
                             <li>
                                 <h1>{product.name}</h1>
@@ -55,7 +55,7 @@ const ProductDetails = (props) => {
                             </li>
                         </ul>
                     </div>
-                    <div className="product-action col-3">
+                    <div className="product-action col-lg-3">
                         <div className="card card-body">
                             <ul>
                                 <li>
