@@ -212,6 +212,44 @@ ul {
   font-size: 26px;
 }
 /* End cart page */
+/* Menu Page */
+
+.titleMenu {
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  font-size: 32px;
+  align-items: center;
+  background: pink;
+}
+
+.foodHeaders {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.appsTitle, .mainCourse, .lightOpt {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*only for development, should be removed*/
+
+/* .appsTitle {
+  background: lightblue;
+}
+.mainCourse {
+  background:lightcoral;
+}
+.lightOpt {
+  background:lightgoldenrodyellow
+} */
+
+/* End of Menu Page */
 
 @media only screen and (max-width: 900px) {
   .about-container {
