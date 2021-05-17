@@ -19,9 +19,6 @@ export function SignupForm(props) {
       <FormContainer>
         <Input type="text" placeholder="Full Name" />
         <Input type="text" placeholder="Username" />
-        <Input type="number" name="birth_day" size="2" maxLength="2" placeholder="Birth Day" />
-        <Input type="number" name="birth_month" size="2" maxLength="2" placeholder="Birth Month" />
-        <Input type="number" name="birth_year" size="2" maxLength="4" placeholder="Birth Year" />
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Password" />
         <Input type="password" placeholder="Confirm Password" />
