@@ -10,7 +10,10 @@ const seedAll = async () => {
         await Item.bulkCreate(itemData);
         console.log("Seeded items \n");
 
-        await User.bulkCreate(userData);
+        await User.bulkCreate(userData, {
+            individualHooks: true,
+            returning: true
+        });
         console.log("Seeded users\n");
 
         process.exit(0);
