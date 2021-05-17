@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Media from "react-media";
+import { useSelector } from "react-redux";
 import "./style.css";
 
 function Nav() {
+    const cart = useSelector(state => state.cart);
+    const { cartItems } = cart;
+
     return (
         <nav>
             <Media queries={{ small: { maxWidth: 800 } }}>
@@ -32,7 +36,9 @@ function Nav() {
                                 <Link to="/login" className="nav-link custom-flex flex-align">Login</Link>
                                 <div className="cart">
                                     <Link to="/cart"><i className="fas fa-shopping-cart wide"></i></Link>
-                                    <div className="cart-count custom-flex flex-align">0</div>
+                                    <div className="cart-count custom-flex flex-align">
+                                        {cartItems.length}
+                                    </div>
                                 </div>
                             </div>
                         </div>
