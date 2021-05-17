@@ -1,12 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Media from "react-media";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./style.css";
+import { signout } from "../../actions/userActions";
 
 function Nav() {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
+    const userSignin = useSelector(state => state.userSignin);
+    const { userInfo } = userSignin;
+    const dispatch = useDispatch();
+
+    const signoutHandler = () => {
+        dispatch(signout());
+    }
 
     return (
         <nav>
@@ -33,13 +41,28 @@ function Nav() {
                             </div>
 
                             <div className="nav-right flex-between flex-align">
-                                <Link to="/login" className="nav-link custom-flex flex-align">Login</Link>
+                                {/* Cart icon */}
                                 <div className="cart">
                                     <Link to="/cart"><i className="fas fa-shopping-cart wide"></i></Link>
                                     <div className="cart-count custom-flex flex-align">
                                         {cartItems.length}
                                     </div>
                                 </div>
+                                {/* Login or profile depending on login status */}
+                                {
+                                    userInfo ? (
+                                        <div className="links">
+                                            <Link to="#" className="link custom-flex flex-align">Profile</Link>
+
+                                            <Link to="#signout" className="link" onClick={signoutHandler}>
+                                                Sign Out
+                                            </Link>
+
+                                        </div>
+                                    ) : (
+                                        <Link to="/login" className="link custom-flex flex-align">Login</Link>
+                                    )
+                                }
                             </div>
                         </div>
                     )
