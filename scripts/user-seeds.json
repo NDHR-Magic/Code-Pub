@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "first_name": "Nathan",
+        "last_name": "Peek",
+        "email": "nmp14fsu@gmail.com",
+        "password": "password",
+        "username": "cool1",
+        "isAdmin": true
+    },
+    {
+        "id": 2,
+        "first_name": "Raquel",
+        "last_name": "Diaz",
+        "email": "test@mail.com",
+        "password": "password",
+        "username": "cool2",
+        "isAdmin": true
+    },
+    {
+        "id": 3,
+        "first_name": "Hader",
+        "last_name": "Cortez",
+        "email": "test2@mail.com",
+        "password": "password",
+        "username": "cool3",
+        "isAdmin": true
+    },
+    {
+        "id": 4,
+        "first_name": "David",
+        "last_name": "Sanchez",
+        "email": "test3@mail.com",
+        "password": "password",
+        "username": "cool4",
+        "isAdmin": true
+    },
+    {
+        "id": 5,
+        "first_name": "Fidel",
+        "last_name": "Bello",
+        "email": "test4@mail.com",
+        "password": "password",
+        "username": "cool5",
+        "isAdmin": true
+    }
+]
