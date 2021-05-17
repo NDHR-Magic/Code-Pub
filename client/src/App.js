@@ -29,6 +29,9 @@ function App() {
         <ProductDetails />
       </Route>
 
+      <Route exact path="/cart/:productId" component={Cart} />
+      <Route exact path="/cart" component={Cart} />
+
       <Route exact path="/menu">
         <Menu />
       </Route>
@@ -40,8 +43,6 @@ function App() {
       <Route exact path="/mixer">
         <DrinkApp />
       </Route>
-
-      <Route path="/cart/:productId" component={Cart} exact />
 
       <Route exact path="/login">
         <Login />
