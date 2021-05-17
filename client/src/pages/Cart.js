@@ -32,7 +32,7 @@ function Cart(props) {
 
     const checkoutHandler = (e) => {
         e.preventDefault();
-        props.history.push('signin?redirect=shipping');
+        props.history.push('login?redirect=shipping');
     }
 
     return (

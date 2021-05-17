@@ -31,21 +31,14 @@
 }
 
 .nav-right {
-    width: 16%;
-    max-width: 200px;
+    width: 33%;
+    max-width: 240px;
     padding-right: 15px;
 }
 
 .nav-bar a {
     color: #fff;
     text-decoration: none;
-}
-
-.nav-link {
-    background: rgb(36, 130, 253);
-    width: 70px;
-    border-radius: 6px;
-    height: 35px;
 }
 
 .nav-bar .fas.wide {
@@ -85,4 +78,14 @@
 .nav-bar .flex-end {
     display: flex;
     justify-content: flex-end;
+}
+
+.links {
+    display: flex;
+}
+
+.links .link,
+.link {
+    color:rgb(36, 130, 253) !important;
+    margin: 0 8px;
 }
