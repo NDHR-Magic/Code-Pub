@@ -110,6 +110,11 @@ body {
   height: 300px;
 }
 
+.store a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .store .card-body h3 {
   margin: 15px;
   width: 100%;
@@ -159,6 +164,23 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.product-details-container input,
+.product-details-container select,
+.product-details-container textarea {
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #a4a4a4;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.product-details-container input:hover,
+.product-details-container select:hover,
+.product-details-container textarea:hover,
+.product-details-container button:hover {
+  border: 0.1rem solid #0ea7ff;
+}
+
 /* End product details page */
 
 @media only screen and (max-width: 900px) {
