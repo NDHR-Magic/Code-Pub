@@ -1,9 +1,11 @@
-const sequelize = require('../connection');
-const { Model, Datatypes, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
 
-class favoriteDrinks extends Model { }
+class foodItem extends Model {
 
-favoriteDrinks.init(
+};
+
+foodItem.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -14,12 +16,16 @@ favoriteDrinks.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            unique: true
         },
         image: {
             type: DataTypes.STRING,
             allowNull: true,
             unique: true,
+        },
+        price: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false
         },
         description: {
             type: DataTypes.STRING,
@@ -31,8 +37,8 @@ favoriteDrinks.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'favoriteDrinks',
+        modelName: 'foodItem',
     }
 )
 
-module.exports = favoriteDrinks;
+module.exports = foodItem;
