@@ -251,6 +251,37 @@ ul {
 
 /* End of Menu Page */
 
+/* Shipping */
+.form-shipping {
+  width: 100%;
+}
+.form-shipping label,
+.form-shipping input {
+  display: block !important;
+  width: 100%;
+}
+
+.form-shipping > div {
+  width: 60%;
+  max-width: 750px;
+}
+
+.form-shipping .btn {
+  width: 100%;
+}
+
+.form-shipping label {
+  margin-bottom: 6px;
+}
+.form-shipping input {
+  margin-bottom: 12px;
+  padding: 4px 2px;
+  background: rgb(236, 255, 255);
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+/* End shipping */
+
 @media only screen and (max-width: 900px) {
   .about-container {
     display: initial;

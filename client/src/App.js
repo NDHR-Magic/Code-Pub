@@ -11,6 +11,7 @@ import About from "./pages/About";
 import ProductDetails from "./pages/ProductDetails";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import ShippingAddress from "./pages/ShippingAddress";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
 
       <Route exact path="/cart/:productId" component={Cart} />
       <Route exact path="/cart" component={Cart} />
+
+      <Route path="/shipping" component={ShippingAddress} />
 
       <Route exact path="/menu">
         <Menu />
