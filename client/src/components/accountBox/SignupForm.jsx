@@ -12,6 +12,8 @@ import {
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
 import { register } from "../../actions/userActions";
+import Loading from "../LoadingScreen";
+import MessageBox from "../MessageBox";
 
 function SignupForm(props) {
   const dispatch = useDispatch();
@@ -44,27 +46,29 @@ function SignupForm(props) {
   }, [props.history, redirect, userInfo]);
 
   return (
-
-    <BoxContainer>
-      <FormContainer>
-        <Input type="text" placeholder="First Name" ref={first_nameRef} />
-        <Input type="text" placeholder="Flast Name" ref={last_nameRef} />
-        <Input type="text" placeholder="Username" ref={usernameRef} />
-        <Input type="email" placeholder="Email" ref={emailRef} />
-        <Input type="password" placeholder="Password" ref={passwordRef} />
-        <Input type="password" placeholder="Confirm Password" ref={confirmRef} />
-      </FormContainer>
-      <Marginer direction="vertical" margin={10} />
-      <SubmitButton type="submit" onClick={e => submitHandler(e)}>Sign-Up</SubmitButton>
-      <Marginer direction="vertical" margin="1em" />
-      <MutedLink href="#">
-        Already have an account?
+    <div>
+      {loading && <Loading></Loading>}
+      {error && <MessageBox variant="danger">{error}</MessageBox>}
+      <BoxContainer>
+        <FormContainer>
+          <Input type="text" placeholder="First Name" ref={first_nameRef} />
+          <Input type="text" placeholder="Flast Name" ref={last_nameRef} />
+          <Input type="text" placeholder="Username" ref={usernameRef} />
+          <Input type="email" placeholder="Email" ref={emailRef} />
+          <Input type="password" placeholder="Password" ref={passwordRef} />
+          <Input type="password" placeholder="Confirm Password" ref={confirmRef} />
+        </FormContainer>
+        <Marginer direction="vertical" margin={10} />
+        <SubmitButton type="submit" onClick={e => submitHandler(e)}>Sign-Up</SubmitButton>
+        <Marginer direction="vertical" margin="1em" />
+        <MutedLink href="#">
+          Already have an account?
         <BoldLink href="#" onClick={switchToSignin}>
-          Sign-In
+            Sign-In
         </BoldLink>
-      </MutedLink>
-    </BoxContainer>
-
+        </MutedLink>
+      </BoxContainer>
+    </div>
   );
 }
 
