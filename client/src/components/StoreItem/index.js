@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Button from "../Button";
 
 function StoreItem({ itemName, itemImg, itemPrice, itemId }) {
-    const addToCart = (e) => {
-        e.preventDefault();
-        console.log("todo asshole. take a hike.")
-    }
 
     return (
         <div className="col-lg-4 col-sm-6">
