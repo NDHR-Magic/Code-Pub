@@ -24,6 +24,13 @@ favoriteDrinks.init(
         description: {
             type: DataTypes.STRING,
             allowNull: true
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "user",
+                key: "id"
+            }
         }
     },
     {
