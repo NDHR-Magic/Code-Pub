@@ -1,0 +1,20 @@
+[
+    {
+        "name": "React Burger",
+        "image": "./Images/MenuItems/ReactBurger.png",
+        "price": 13.99,
+        "description": "Our delicious react branded burger comes with side of fries and a pickle."
+    },
+    {
+        "name": "Hot wings",
+        "image": "./Images/MenuItems/Wings.jpeg",
+        "price": 10.99,
+        "description": "10 wings smothered in our special hot wing sauce."
+    },
+    {
+        "name": "Pizza",
+        "image": "./Images/MenuItems/Pizza.png",
+        "price": 15.99,
+        "description": "14 inch Large Pizza with your choice of toppings."
+    }
+]
