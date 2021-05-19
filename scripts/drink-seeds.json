@@ -2,25 +2,21 @@
     {
         "name": "White Russian",
         "image": "./Images/MenuItems/chocolate-white-russian-3-1.jpg",
-        "price": "",
-        "description": "A classic White Russian made with Vodka, coffee liqueur and cream."
+        "description": "A classic White Russian made with Vodka, coffee liqueur, and cream."
     },
     {
         "name": "Gibson",
         "image": "./Images/MenuItems/Gibson.jpg",
-        "price": "",
-        "description": "Traditional Gibson made with Gin and dry Vermouth and garnished with pickled onion."
+        "description": "Traditional Gibson made with Gin, dry Vermouth and garnished with pickled onion."
     },
     {
         "name": "Royal Flush",
         "image": "./Images/MenuItems/RoyalFlush.jpg",
-        "price": "",
         "description": "Royal Flush made with Crown Royal Whiskey, Peach Schnapps, and Cranberry juice."
     },
     {
         "name": "Cosmopolitan",
         "image": "./Images/MenuItems/Cosmo.jpg",
-        "price": "",
         "description": "Cosmo made with Vodka, Triple sec, Lime juice, and Cranberry juice with a twist of orange."
     }
 ]
