@@ -32,7 +32,7 @@ function Cart(props) {
 
     const checkoutHandler = (e) => {
         e.preventDefault();
-        props.history.push('login?redirect=shipping');
+        props.history.push('/login?redirect=shipping');
     }
 
     return (
@@ -82,7 +82,7 @@ function Cart(props) {
                         <li>
                             <h2>
                                 Subtotal ({cartItems.reduce((a, c) => a + parseInt(c.qty), 0)} items) : $
-                                {cartItems.reduce((a, c) => a + parseFloat(c.price) * parseInt(c.qty), 0)}
+                                {parseFloat(cartItems.reduce((a, c) => a + parseFloat(c.price) * parseInt(c.qty), 0)).toFixed(2)}
                             </h2>
                         </li>
                         <li>

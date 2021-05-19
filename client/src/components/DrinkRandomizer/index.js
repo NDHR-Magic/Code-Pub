@@ -3,7 +3,7 @@ import Header from "../Header";
 import Button from "../Button";
 import Card from "../Card";
 import "./style.css";
-import API from "../../utils/CocktailApi";
+import { searchDrink, searchDrinkInfo } from "../../utils/CocktailApi";
 
 const DrinkRandomizer = () => {
     const selectRef = useRef();
@@ -22,17 +22,17 @@ const DrinkRandomizer = () => {
         Garnish and serve with straw.`
     });
 
-    const placeHolder = async (e) => {
+    const searchAPI = async (e) => {
         e.preventDefault();
 
         //Get random drink using selectRef
-        const data = await API.searchDrink(selectRef.current.value);
+        const data = await searchDrink(selectRef.current.value);
         const drinks = data.data.drinks;
         const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
         const { idDrink, strDrink, strDrinkThumb } = randomDrink;
 
         // Get info for that drink
-        const drinkData = await API.searchDrinkInfo(strDrink);
+        const drinkData = await searchDrinkInfo(strDrink);
 
         // Push all the ingredients into an arr
         const ingredients = [];
@@ -69,7 +69,7 @@ const DrinkRandomizer = () => {
                     <option value="rum">Rum</option>
                 </select>
                 <div className="custom-flex">
-                    <Button onClickEvent={placeHolder}>Get random drink!</Button>
+                    <Button onClickEvent={searchAPI}>Get random drink!</Button>
                 </div>
             </form>
 
