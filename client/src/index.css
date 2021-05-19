@@ -281,6 +281,20 @@ ul {
   border-radius: 4px;
 }
 /* End shipping */
+/* Payment */
+.form-payment {width: 100%;}
+.form-payment label {
+  margin: 0 0 10px 10px;
+}
+
+.form-payment div > div > div:nth-child(1) {
+  padding-top: 12px;
+}
+.form-payment div > div > div:nth-child(2) {
+  padding-top: 6px;
+  padding-bottom: 12px;
+}
+/* End payment */
 
 @media only screen and (max-width: 900px) {
   .about-container {

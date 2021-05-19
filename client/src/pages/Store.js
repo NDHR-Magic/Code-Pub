@@ -11,8 +11,6 @@ function Store() {
     const productList = useSelector((state) => state.productList)
     const { loading, error, products } = productList;
 
-    console.log(productList)
-
     useEffect(() => {
         dispatch(getAllProducts());
     }, [dispatch])
