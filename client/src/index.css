@@ -28,13 +28,26 @@ body {
 
 .custom-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+}
+
+.custom-row.top {
+  align-items: flex-start;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.custom-col-2 {
+  flex: 2 1 50rem;
+}
+.custom-col-1 {
+  flex: 1 1 25rem;
 }
 
 /* Images */
@@ -295,6 +308,19 @@ ul {
   padding-bottom: 12px;
 }
 /* End payment */
+/* Place Order screen */
+.place-order li,
+.place-order li > div,
+.place-order .custom-col-1 .card {
+  background: rgb(231, 253, 253);
+  border-radius: 8px;
+}
+
+.place-order li,
+.place-order .custom-col-1 .card {
+  margin: 6px 8px;
+}
+/* End place order */
 
 @media only screen and (max-width: 900px) {
   .about-container {
