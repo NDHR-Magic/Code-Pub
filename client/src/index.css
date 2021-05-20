@@ -269,7 +269,8 @@ ul {
   width: 100%;
 }
 .form-shipping label,
-.form-shipping input {
+.form-shipping input,
+.form-shipping select {
   display: block !important;
   width: 100%;
 }
@@ -286,7 +287,8 @@ ul {
 .form-shipping label {
   margin-bottom: 6px;
 }
-.form-shipping input {
+.form-shipping input,
+.form-shipping select {
   margin-bottom: 12px;
   padding: 4px 2px;
   background: rgb(236, 255, 255);
