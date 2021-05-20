@@ -14,6 +14,7 @@ import Nav from "./components/Nav";
 import ShippingAddress from "./pages/ShippingAddress";
 import PaymentMethod from "./pages/PaymentMethod";
 import EventDetails from "./pages/EventDetails";
+import PlaceOrder from "./pages/PlaceOrder";
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
 
       <Route path="/shipping" component={ShippingAddress} />
       <Route path="/payment" component={PaymentMethod} />
+
+      <Route exact path="/placeorder" component={PlaceOrder} />
 
       <Route exact path="/menu">
         <Menu />
