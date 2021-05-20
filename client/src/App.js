@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import ShippingAddress from "./pages/ShippingAddress";
 import PaymentMethod from "./pages/PaymentMethod";
+import EventDetails from "./pages/EventDetails";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
       <Route exact path="/events">
         <Events />
       </Route>
+      <Route path="/events/:id" component={EventDetails}/>
 
       <Route exact path="/mixer">
         <DrinkApp />
