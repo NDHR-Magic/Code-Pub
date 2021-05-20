@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": " data for event 1",
+        "description": "events for day one"
+    },
+    {
+        "id": 2,
+        "title": " data for event 2",
+        "description": "events for day two"
+    },
+    {
+        "id": 3,
+        "title": " data for event 3",
+        "description": "events for day three"
+    }
+]
