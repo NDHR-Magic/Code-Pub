@@ -38,7 +38,7 @@ const PlaceOrder = (props) => {
                                 <p>
                                     <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
                                     <strong>Address:</strong> {cart.shippingAddress.address},
-                                    {cart.shippingAddress.city}, {cart.shippingAddress.zipCode}
+                                    {cart.shippingAddress.city}, {cart.shippingAddress.state} , {cart.shippingAddress.zipCode}
                                     , {cart.shippingAddress.country}
                                 </p>
                             </div>
