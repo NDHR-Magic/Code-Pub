@@ -12,4 +12,21 @@ const generateToken = user => {
     });
 }
 
-module.exports = generateToken;
+const isAuth = (req, res, next) => {
+    const authorization = req.headers.authorization;
+    if (authorization) {
+        const token = authorization.slice(7, authorization.length); // Bearer XXXXXX
+        jwt.verify(token, process.env.JWT_SECRET || 'AReallyCoolJWTSecretFayl', (err, decode) => {
+            if (err) {
+                res.status(401).json({ message: "Invalid Token" });
+            } else {
+                req.user = decode;
+                next();
+            }
+        })
+    } else {
+        res.status(401).json({ message: "No Token" });
+    }
+}
+
+module.exports = { generateToken, isAuth };
