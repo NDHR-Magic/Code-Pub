@@ -52,7 +52,7 @@ function Nav() {
                                 {
                                     userInfo ? (
                                         <div className="links">
-                                            <Link to="#" className="link custom-flex flex-align">Profile</Link>
+                                            <Link to="/profile" className="link custom-flex flex-align">Profile</Link>
 
                                             <Link to="#signout" className="link" onClick={signoutHandler}>
                                                 Sign Out
