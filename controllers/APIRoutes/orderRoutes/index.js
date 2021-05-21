@@ -1,13 +1,28 @@
 const router = require("express").Router();
-const { Order, OrderItem, ShippingAddress, Item } = require("../../../models");
+const { Order, OrderItem, ShippingAddress, Item, User } = require("../../../models");
 const { isAuth } = require("../../../utils/utils");
 
 
 // Do later
+router.get("/", async (req, res) => {
+    try {
+        const orderData = await Order.findAll(req.params.id, {
+            include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }]
+        });
+
+        const orders = orderData.map(order => order.get({ plain: true }));
+
+        res.status(200).json(orders);
+    } catch (e) {
+        res.status(500).json(e);
+        console.log(e);
+    }
+})
+
 router.get("/:id", async (req, res) => {
     try {
         const orderData = await Order.findByPk(req.params.id, {
-            include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }]
+            include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }]
         });
 
         const order = orderData.get({ plain: true });
