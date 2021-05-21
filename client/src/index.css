@@ -5,6 +5,7 @@ body {
   min-height: 100%;
 }
 
+
 .custom-flex{
   display: flex;
   justify-content: center;
@@ -60,10 +61,13 @@ ul {
 /* HomePage */
 .home {
   color: #fff;
-  height: 100vh;
-  background: #333;
+  height: 125vh;
+  /* background: #333; */
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(38,122,43,1) 94%, rgba(0,94,24,1) 100%); */
+  background: radial-gradient(circle, rgba(0,0,0,1) 81%, rgba(38,122,43,1) 92%, rgba(0,94,24,1) 100%);
   font-size: 1.3em;
   margin-bottom: 60px;
+  font-family: 'KoHo', sans-serif;
 }
 .featuredEvent {
   width: 100%;
@@ -77,6 +81,11 @@ ul {
   width: 80%;
   margin: 0 auto;
   padding: 10px;
+  /* font-family: 'KoHo', sans-serif !important; */
+}
+
+.reactShotGlass:hover{
+  color: rgb(131, 255, 107) !important; 
 }
 /* End homePage */
 /* Drink App page */
