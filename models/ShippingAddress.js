@@ -13,9 +13,6 @@ ShippingAddress.init({
     full_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            isAlpha: true
-        }
     },
     address: {
         type: DataTypes.STRING,
@@ -42,7 +39,6 @@ ShippingAddress.init({
     },
     order_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
             model: "order",
             key: "id"

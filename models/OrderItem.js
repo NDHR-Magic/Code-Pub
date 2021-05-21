@@ -25,6 +25,14 @@ OrderItem.init({
             model: "item",
             key: "id"
         }
+    },
+    qty: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+        validate: {
+            isNumeric: true
+        }
     }
 }, {
     sequelize,
