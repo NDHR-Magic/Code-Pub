@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Media from "react-media";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,6 +12,8 @@ function Nav() {
     const { userInfo } = userSignin;
     const dispatch = useDispatch();
 
+    const [navState, setNavState] = useState("hidden");
+
     const signoutHandler = () => {
         dispatch(signout());
     }
@@ -21,15 +23,29 @@ function Nav() {
             <Media queries={{ small: { maxWidth: 800 } }}>
                 {matches =>
                     matches.small ? (
-                        <div id="small-nav" className="nav-bar flex-between">
-                            <div className="nav-left flex-between flex-align">
-                                <h1>Logo</h1>
-                            </div>
+                        <>
+                            <div id="small-nav" className="nav-bar flex-between">
+                                <div className="nav-left flex-between flex-align">
+                                    <h1>Logo</h1>
+                                </div>
 
-                            <div className="nav-right flex-end flex-align">
-                                <i className="fas small fa-bars"></i>
+                                <div className="nav-right flex-end flex-align">
+                                    <i onClick={e => setNavState("notHidden")} className="fas small fa-bars"></i>
+                                </div>
                             </div>
-                        </div>
+                            <div className={`nav-page-extended ${navState}`}>
+                                <span onClick={e => setNavState("hidden")} className="nav-page-close">X</span>
+                                <div>
+                                    <ul>
+                                        <Link to="/">Home</Link>
+                                        <Link to="/menu">Menu</Link>
+                                        <Link to="/events">Events</Link>
+                                        <Link to="/store">Store</Link>
+                                        <Link to="/mixer">Drink App</Link>
+                                    </ul>
+                                </div>
+                            </div>
+                        </>
                     ) : (
                         <div id="wide-nav" className="nav-bar flex-between">
                             <div className="nav-left flex-between flex-align">
