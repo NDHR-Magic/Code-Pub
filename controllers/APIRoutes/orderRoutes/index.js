@@ -25,6 +25,11 @@ router.get("/:id", async (req, res) => {
             include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }]
         });
 
+        if (!orderData) {
+            res.status(404).json({ message: "Order not found" });
+            return;
+        }
+
         const order = orderData.get({ plain: true });
 
         res.status(200).json({ order });
