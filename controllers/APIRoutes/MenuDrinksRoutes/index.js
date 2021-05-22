@@ -3,7 +3,7 @@ const { drinkItem } = require("../../../models");
 
 router.get("/", async (req, res) => {
     try {
-        const drinkData = await foodItem.findAll();
+        const drinkData = await drinkItem.findAll();
         const drinks = drinkData.map(drink => drink.get({ plain: true }))
 
         res.status(200).json(drinks);
