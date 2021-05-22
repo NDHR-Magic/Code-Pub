@@ -35,6 +35,8 @@ const Order = (props) => {
                                     {order.order.shippingAddress.city}, {order.order.shippingAddress.state} , {order.order.shippingAddress.zip_code}
                                     , {order.order.shippingAddress.country}
                                         </p>
+                                        {order.is_delivered ? <MessageBox variant="success">Delivered at {order.delivered_at}</MessageBox>
+                                            : <MessageBox variant="danger">Not Delivered</MessageBox>}
                                     </div>
                                 </li>
                                 <li>
@@ -43,6 +45,8 @@ const Order = (props) => {
                                         <p>
                                             <strong>Method:</strong> {order.order.payment_method}
                                         </p>
+                                        {order.is_paid ? <MessageBox variant="success">Paid at {order.paid_at}</MessageBox>
+                                            : <MessageBox variant="danger">Not Paid</MessageBox>}
                                     </div>
                                 </li>
                                 <li>
