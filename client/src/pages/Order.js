@@ -1,22 +1,53 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { PayPalButton } from "react-paypal-button-v2";
 import { Link, withRouter, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import axios from 'axios';
 import Loading from "../components/LoadingScreen";
 import MessageBox from "../components/MessageBox";
 import { detailsOrder } from '../actions/orderActions.js';
 
 const Order = (props) => {
     const dispatch = useDispatch();
+    // PayPal standard development kit state
+    const [sdkReady, setSdkReady] = useState(false);
+    // Order id from params
     const { id } = useParams();
+
     const orderDetails = useSelector(state => state.orderDetails);
     const { loading, error, order } = orderDetails;
-    if (order) {
-        console.log(order.order);
-    }
 
     useEffect(() => {
-        dispatch(detailsOrder(id));
-    }, [id, dispatch]);
+        // Add paypal script to page
+        const addPayPalScript = async () => {
+            const { data } = await axios.get("/api/config/paypal");
+
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;
+            script.async = true;
+            script.onload = () => {
+                setSdkReady(true);
+            };
+            document.body.appendChild(script);
+        };
+        if (!order) {
+            dispatch(detailsOrder(id));
+        } else {
+            if (!order.order.is_paid) {
+                if (!window.paypal) {
+                    addPayPalScript();
+                } else {
+                    setSdkReady(true);
+                }
+            }
+        }
+
+    }, [id, dispatch, order, sdkReady]);
+
+    const successPaymentHandler = () => {
+        console.log("ehhhhh")
+    }
 
     return loading ? (<Loading />)
         : error ? (<MessageBox variant="danger">{error}</MessageBox>)
@@ -55,7 +86,7 @@ const Order = (props) => {
                                         <ul>
                                             {
                                                 order.order.orderItems.map(item => (
-                                                    <li key={item.product}>
+                                                    <li key={item.item.id}>
                                                         <div className="custom-row flex-align">
                                                             <div className="mb-2">
                                                                 <img src={`../${item.item.image}`} alt={item.item.name} className="small" />
@@ -107,6 +138,15 @@ const Order = (props) => {
                                             <div>${parseFloat(order.order.total_price).toFixed(2)}</div>
                                         </div>
                                     </li>
+                                    {
+                                        !order.is_paid && (
+                                            <li>
+                                                {!sdkReady
+                                                    ? (<Loading />)
+                                                    : (<PayPalButton amount={order.order.total_price} onSuccess={successPaymentHandler}></PayPalButton>)}
+                                            </li>
+                                        )
+                                    }
                                 </ul>
                             </div>
                         </div>
