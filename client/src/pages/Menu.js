@@ -1,18 +1,20 @@
 import React from "react";
+import MenuFood from "../components/MenuFood";
+import MenuDrink from "../components/MenuDrinks";
+
 
 function Menu() {
-    // const [menuSelection, setMenuSelection] = useState();
+    const [menuSelection, setMenuSelection] = React.useState(MenuFood);
 
     return (
         <div>
             <title className="titleMenu">
                 Menu
             </title>
-            <div className="foodHeaders">
-                <div className="appsTitle col">Starters</div>
-                <div className="mainCourse col">Main Dishes</div>
-                <div className="lightOpt col">Lighter Options</div>
+            <div className="changeMenu col">See Drink Options
+            <input id="radioSelect" type="radio"></input>
             </div>
+            {menuSelection}
         </div >
     )
 }
