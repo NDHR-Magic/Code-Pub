@@ -63,7 +63,14 @@ router.post('/', isAuth, async (req, res) => {
                 });
             };
 
-            const shippingAddress = await ShippingAddress.create(req.body.shippingAddress);
+            const shippingAddress = await ShippingAddress.create({
+                full_name: req.body.shippingAddress.fullName,
+                address: req.body.shippingAddress.address,
+                city: req.body.shippingAddress.city,
+                state: req.body.shippingAddress.state,
+                zip_code: req.body.shippingAddress.zipCode,
+                country: req.body.shippingAddress.country
+            });
 
             await order.setShippingAddress(shippingAddress);
 
