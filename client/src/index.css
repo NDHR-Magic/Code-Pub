@@ -234,6 +234,7 @@ ul {
   font-size: 26px;
 }
 /* End cart page */
+
 /* Menu Page */
 
 .titleMenu {
@@ -252,24 +253,15 @@ ul {
   font-size: 30px;
 }
 
-.appsTitle, .mainCourse, .lightOpt {
-  width: 33.33%;
+.changeMenu {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/*only for development, should be removed*/
-
-/* .appsTitle {
-  background: lightblue;
+#radioSelect {
+  margin: 5px;
 }
-.mainCourse {
-  background:lightcoral;
-}
-.lightOpt {
-  background:lightgoldenrodyellow
-} */
 
 /* End of Menu Page */
 
