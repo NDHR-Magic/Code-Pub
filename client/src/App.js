@@ -15,6 +15,7 @@ import ShippingAddress from "./pages/ShippingAddress";
 import PaymentMethod from "./pages/PaymentMethod";
 import EventDetails from "./pages/EventDetails";
 import PlaceOrder from "./pages/PlaceOrder";
+import Order from "./pages/Order";
 
 function App() {
   return (
@@ -41,6 +42,8 @@ function App() {
 
       <Route exact path="/placeorder" component={PlaceOrder} />
 
+      <Route path="/order/:id" component={Order} />
+
       <Route exact path="/menu">
         <Menu />
       </Route>
@@ -48,7 +51,7 @@ function App() {
       <Route exact path="/events">
         <Events />
       </Route>
-      <Route path="/events/:id" component={EventDetails}/>
+      <Route path="/events/:id" component={EventDetails} />
 
       <Route exact path="/mixer">
         <DrinkApp />
