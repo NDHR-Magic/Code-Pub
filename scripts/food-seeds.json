@@ -7,7 +7,7 @@
     },
     {
         "name": "Hot wings",
-        "image": "./Images/MenuItems/Wings.jpeg",
+        "image": "./Images/MenuItems/Wings.jpg",
         "price": 10.99,
         "description": "10 wings smothered in our special hot wing sauce."
     },
