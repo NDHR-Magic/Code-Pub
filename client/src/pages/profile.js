@@ -41,7 +41,7 @@ function Profile() {
                 <h4>User Name</h4>
                 <h5>First and Last</h5>
             </Left>
-            <div className="right">
+            <Right>
                 <div className="info">
                     <h3> Favorite Drinks</h3>
                     <div className="info-data"></div>
@@ -57,7 +57,7 @@ function Profile() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Right>
        </Wrapper>
     )
 }
