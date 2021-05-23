@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Particles from 'react-tsparticles'
 
 const Wrapper = styled.div`
 position: absolute;
@@ -30,6 +31,8 @@ width: 65%;
   border-top-right-radius: 5px;
   border-bottom-right
 `
+
+
 function Profile() {
     return (
        <Wrapper>
