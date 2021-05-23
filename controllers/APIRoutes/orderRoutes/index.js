@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Order, OrderItem, ShippingAddress, Item, User } = require("../../../models");
+const { Order, OrderItem, ShippingAddress, Item, User, PaymentResult } = require("../../../models");
 const { isAuth } = require("../../../utils/utils");
 
 
@@ -7,7 +7,7 @@ const { isAuth } = require("../../../utils/utils");
 router.get("/", async (req, res) => {
     try {
         const orderData = await Order.findAll(req.params.id, {
-            include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }]
+            include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }, { model: PaymentResult }]
         });
 
         const orders = orderData.map(order => order.get({ plain: true }));
@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
         const orderData = await Order.findByPk(req.params.id, {
-            include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }]
+            include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }, { model: PaymentResult }]
         });
 
         if (!orderData) {
@@ -81,6 +81,34 @@ router.post('/', isAuth, async (req, res) => {
 
             res.status(201).json({ message: 'Order Created', order: order });
         };
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
+router.put("/:id/pay", isAuth, async (req, res) => {
+    try {
+        const order = await Order.findByPk(req.params.id);
+        if (!order) {
+            res.status(404).json({ message: "Order not found" });
+            return;
+        }
+        order.is_paid = true;
+        order.paid_at = Date.now();
+        order.paymentResult = { id: req.body.id, status: req.body.status, update_time: req.body.update_time, email_address: req.body.email_address }
+
+        const paymentResultData = await PaymentResult.create({
+            payment_id: req.body.id,
+            status: req.body.status,
+            update_time: req.body.update_time,
+            email_address: req.body.email_address,
+            order_id: order.id
+        });
+
+        const updatedOrder = await order.save();
+
+        res.status(200).json({ message: "Order Paid", order: updatedOrder });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
