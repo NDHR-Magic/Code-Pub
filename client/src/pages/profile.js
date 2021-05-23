@@ -24,7 +24,11 @@ color: #fff;
 `
 
 const Right = styled.div`
-
+width: 65%;
+  background: #fff;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right
 `
 function Profile() {
     return (
