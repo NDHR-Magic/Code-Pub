@@ -1,21 +1,60 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MenuFood from "../components/MenuFood";
 import MenuDrink from "../components/MenuDrinks";
+import MenuAPI, { getFood, getDrinks } from "../utils/MenuAPI";
 
 
 function Menu() {
-    const [menuSelection, setMenuSelection] = React.useState(MenuFood);
+    const [drinkSelection, setDrinkSelection] = React.useState(false);
+    const [FoodSelection, setFoodSelection] = React.useState([]);
+    const [drinkItems, setDrinkItems] = React.useState([]);
+    useEffect(() => {
+        const getFoodItems = async () => {
+            const { data } = await getFood()
+            console.log(data)
+            setFoodSelection(data)
+        }
+        const getDrinkItems = async () => {
+            const { data } = await getDrinks();
+            setDrinkItems(data);
+        }
+        getFoodItems();
+        getDrinkItems();
+    }, []);
+
+    const handleMenuChange = (e) => {
+        if (document.getElementById("checkboxInput").checked) {
+            setDrinkSelection(true);
+        } else {
+            setDrinkSelection(false);
+        }
+    }
 
     return (
-        <div>
+        <div className="menuPage">
             <title className="titleMenu">
                 Menu
             </title>
-            <div className="changeMenu col">See Drink Options
-            <input id="radioSelect" type="radio"></input>
+            <div className="changeMenu">See Drink Options
+            <input id="checkboxInput" type="checkbox" onChange={e => handleMenuChange(e)}></input>
             </div>
-            {menuSelection}
-        </div >
+            {drinkSelection
+                ? (<div></div>)
+                : (
+                    <div className="foodContainer">
+                        {FoodSelection.map((food) => (
+                            <MenuFood
+                                key={food.id}
+                                id={food.id}
+                                name={food.name}
+                                desc={food.description}
+                                img={food.image}
+                                price={food.price}
+                            />
+                        ))}
+                    </div>
+                )}
+        </div>
     )
 }
 
