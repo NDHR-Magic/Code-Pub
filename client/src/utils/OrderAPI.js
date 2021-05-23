@@ -7,7 +7,7 @@ export const createOrderAPI = async (order, userInfo) => {
             Authorization: `Bearer ${userInfo.token}`
         }
     });
-}
+};
 
 export const getOrderInfo = async (id, userInfo) => {
     return await axios.get(`/api/orders/${id}`, {
@@ -15,4 +15,10 @@ export const getOrderInfo = async (id, userInfo) => {
             Authorization: `Bearer ${userInfo.token}`
         }
     });
-}
+};
+
+export const payOrderAPI = async (order, paymentResult, userInfo) => {
+    return await axios.put(`/api/orders/${order.id}/pay`, paymentResult, {
+        headers: { Authorization: `Bearer ${userInfo.token}` }
+    });
+};
