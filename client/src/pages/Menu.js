@@ -39,7 +39,16 @@ function Menu() {
             <input id="checkboxInput" type="checkbox" onChange={e => handleMenuChange(e)}></input>
             </div>
             {drinkSelection
-                ? (<div></div>)
+                ? (<div className="drinkContainer">
+                    {drinkItems.map((drink) => (
+                        <MenuDrink
+                            key={drink.id}
+                            id={drink.id}
+                            name={drink.name}
+                            desc={drink.description}
+                            img={drink.image}
+                        />
+                    ))}</div>)
                 : (
                     <div className="foodContainer">
                         {FoodSelection.map((food) => (
