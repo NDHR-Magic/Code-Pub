@@ -1,5 +1,9 @@
 * {box-sizing: border-box;}
 
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0 0 60px 0;
   min-height: 100%;
@@ -236,14 +240,13 @@ ul {
 /* End cart page */
 
 /* Menu Page */
-
 .titleMenu {
   display: flex;
   justify-content: center;
   height: 120px;
   font-size: 32px;
   align-items: center;
-  background: pink;
+  color: white;
 }
 
 .foodHeaders {
@@ -257,12 +260,12 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  color:white !important; 
 }
 
-#radioSelect {
+#checkboxInput {
   margin: 5px;
 }
-
 /* End of Menu Page */
 
 /* Shipping */
