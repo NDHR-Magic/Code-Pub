@@ -15,7 +15,9 @@ import ShippingAddress from "./pages/ShippingAddress";
 import PaymentMethod from "./pages/PaymentMethod";
 import EventDetails from "./pages/EventDetails";
 import PlaceOrder from "./pages/PlaceOrder";
+import Profile from './pages/profile';
 import Order from "./pages/Order";
+
 
 function App() {
   return (
@@ -55,6 +57,10 @@ function App() {
 
       <Route exact path="/mixer">
         <DrinkApp />
+      </Route>
+      
+      <Route exact path="/profile">
+      <Profile />
       </Route>
 
       <Route path="/login">
