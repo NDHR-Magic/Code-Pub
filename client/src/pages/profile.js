@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Particles from 'react-tsparticles'
+
 
 const Wrapper = styled.div`
 position: absolute;
