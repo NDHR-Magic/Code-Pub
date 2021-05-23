@@ -8,6 +8,7 @@ const Events = require("./Events");
 const Order = require("./Orders");
 const OrderItem = require("./OrderItem");
 const ShippingAddress = require("./ShippingAddress");
+const PaymentResult = require("./PaymentResult");
 
 User.hasMany(favoriteDrinks, {
     foreignKey: "user_id"
@@ -29,4 +30,7 @@ OrderItem.belongsTo(Item, { foreignKey: "item_id" });
 Order.hasOne(ShippingAddress, { foreignKey: "order_id" });
 ShippingAddress.belongsTo(Order, { foreignKey: "order_id" });
 
-module.exports = { Item, User, Cart, drinkItem, favoriteDrinks, foodItem, Events, Order, OrderItem, ShippingAddress };
+Order.hasOne(PaymentResult, { foreignKey: "order_id" });
+PaymentResult.belongsTo(Order, { foreignKey: "order_id" });
+
+module.exports = { Item, User, Cart, drinkItem, favoriteDrinks, foodItem, Events, Order, OrderItem, ShippingAddress, PaymentResult };
