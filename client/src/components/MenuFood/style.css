@@ -13,14 +13,15 @@
   .foodContainer {
       display: flex;
       justify-content: center;
-      max-width: 900px;
+      max-width: 1200px;
       width:100%;
+      height: 100%;
       margin: 10px auto;
       flex-wrap: wrap;
   }
 
   .menuPage {
-      background: linear-gradient(to top left, rgb(59, 255, 72) 15%, 35%, black 80%)
+      background: linear-gradient(to top left, rgb(59, 255, 72) 15%, 35%, black 80%);
   }
   
   .flip-card {
