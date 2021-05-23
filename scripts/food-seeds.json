@@ -3,11 +3,11 @@
         "name": "React Burger",
         "image": "./Images/MenuItems/ReactBurger.png",
         "price": 13.99,
-        "description": "Our delicious react branded burger comes with side of fries and a pickle."
+        "description": "Our delicious React branded burger comes with side of fries and a pickle."
     },
     {
         "name": "Hot wings",
-        "image": "./Images/MenuItems/Wings.jpeg",
+        "image": "./Images/MenuItems/Wings.jpg",
         "price": 10.99,
         "description": "10 wings smothered in our special hot wing sauce."
     },
@@ -15,6 +15,24 @@
         "name": "Pizza",
         "image": "./Images/MenuItems/Pizza.png",
         "price": 15.99,
-        "description": "14 inch Large Pizza with your choice of toppings."
+        "description": "14 inch large pizza with your choice of toppings."
+    },
+    {
+        "name": "Mozzarella Sticks",
+        "image": "./Images/MenuItems/mozza-sticks.jpg",
+        "price": 6.99,
+        "description": "Served with a side of marinara."
+    },
+    {
+        "name": "Nachos",
+        "image": "./Images/MenuItems/nachos.jpg",
+        "price": 14.99,
+        "description": "Mouth watering ultimate nachos topped with the works."
+    },
+    {
+        "name": "Cheese Fries",
+        "image": "./Images/MenuItems/cheesefries.jpg",
+        "price": 9.99,
+        "description": "Fries smothered in cheese and topped with bacon."
     }
 ]

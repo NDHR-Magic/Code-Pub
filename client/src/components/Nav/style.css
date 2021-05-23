@@ -1,17 +1,19 @@
 .nav-bar, footer {
     width: 100%;
     height: 80px;
-    background: rgb(0,128,128);
+    background: rgb(20, 20, 20);
+    /* background: rgb(0,128,128);
     background: -moz-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
-    background: linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%); */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008080",endColorstr="#ffffff",GradientType=1);   
 }
 
 .nav-bar h1 {
     padding: 0;
     margin: 0;
-    color: #fff;
+    /* color: #fff; */
+    color: rgb(59, 255, 72);
     font-size: 30px;
 }
 
@@ -37,7 +39,8 @@
 }
 
 .nav-bar a {
-    color: #fff;
+    /* color: #fff; */
+    color: rgb(59, 255, 72);
     text-decoration: none;
 }
 
@@ -60,7 +63,8 @@
 
 .cart-count {
     background: teal;
-    color: #fff;
+    /* color: #fff; */
+    color: rgb(59, 255, 72);
     font-size: 1.2em;
     width: 37px;
     height: 37px;
@@ -88,4 +92,53 @@
 .link {
     color:rgb(36, 130, 253) !important;
     margin: 0 8px;
+}
+
+.fa-bars {
+    cursor: pointer;
+    color: rgb(59, 255, 72);
+}
+.fa-shopping-cart {
+    color: rgb(59, 255, 72) !important;
+}
+
+.nav-page-extended {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    background: #111;
+    animation: slideIn 0.6s linear;
+}
+
+.nav-page-extended .nav-page-close {
+    font-size: 30px;
+    color:rgb(59, 255, 72);
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    cursor: pointer;
+}
+
+.nav-page-extended > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-page-extended ul a {
+    display: block;
+    font-size: 1.4rem;
+    color:rgb(59, 255, 72);
+}
+
+@keyframes slideIn {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
 }

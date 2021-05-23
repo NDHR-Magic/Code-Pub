@@ -1,0 +1,20 @@
+.drinkDiv {
+    height: 300px;
+    width: 300px;
+    font-size: 30px;
+    margin: 30px 20px;
+  }
+
+  .drinkDiv img {
+      width: 300px;
+      height: 300px;
+  }
+
+  .drinkContainer {
+      display: flex;
+      justify-content: center;
+      max-width: 900px;
+      width:100%;
+      margin: 10px auto;
+      flex-wrap: wrap;
+  }

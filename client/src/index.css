@@ -1,9 +1,14 @@
 * {box-sizing: border-box;}
 
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0 0 60px 0;
   min-height: 100%;
 }
+
 
 .custom-flex{
   display: flex;
@@ -60,10 +65,13 @@ ul {
 /* HomePage */
 .home {
   color: #fff;
-  height: 100vh;
-  background: #333;
+  height: 125vh;
+  /* background: #333; */
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(38,122,43,1) 94%, rgba(0,94,24,1) 100%); */
+  background: radial-gradient(circle, rgba(0,0,0,1) 81%, rgba(38,122,43,1) 92%, rgba(0,94,24,1) 100%);
   font-size: 1.3em;
   margin-bottom: 60px;
+  font-family: 'KoHo', sans-serif;
 }
 .featuredEvent {
   width: 100%;
@@ -77,6 +85,11 @@ ul {
   width: 80%;
   margin: 0 auto;
   padding: 10px;
+  /* font-family: 'KoHo', sans-serif !important; */
+}
+
+.reactShotGlass:hover{
+  color: rgb(131, 255, 107) !important; 
 }
 /* End homePage */
 /* Drink App page */
@@ -225,15 +238,15 @@ ul {
   font-size: 26px;
 }
 /* End cart page */
-/* Menu Page */
 
+/* Menu Page */
 .titleMenu {
   display: flex;
   justify-content: center;
   height: 120px;
   font-size: 32px;
   align-items: center;
-  background: pink;
+  color: white;
 }
 
 .foodHeaders {
@@ -243,25 +256,16 @@ ul {
   font-size: 30px;
 }
 
-.appsTitle, .mainCourse, .lightOpt {
-  width: 33.33%;
+.changeMenu {
   display: flex;
   justify-content: center;
   align-items: center;
+  color:white !important; 
 }
 
-/*only for development, should be removed*/
-
-/* .appsTitle {
-  background: lightblue;
+#checkboxInput {
+  margin: 5px;
 }
-.mainCourse {
-  background:lightcoral;
-}
-.lightOpt {
-  background:lightgoldenrodyellow
-} */
-
 /* End of Menu Page */
 
 /* Shipping */
@@ -269,7 +273,8 @@ ul {
   width: 100%;
 }
 .form-shipping label,
-.form-shipping input {
+.form-shipping input,
+.form-shipping select {
   display: block !important;
   width: 100%;
 }
@@ -286,7 +291,8 @@ ul {
 .form-shipping label {
   margin-bottom: 6px;
 }
-.form-shipping input {
+.form-shipping input,
+.form-shipping select {
   margin-bottom: 12px;
   padding: 4px 2px;
   background: rgb(236, 255, 255);

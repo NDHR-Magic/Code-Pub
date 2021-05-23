@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, withRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import CheckoutSteps from "../components/CheckoutSteps.js";
+import { createOrder } from '../actions/orderActions.js';
+import { ORDER_CREATE_RESET } from '../constants/orderConstants.js';
+import Loading from "../components/LoadingScreen";
+import MessageBox from "../components/MessageBox";
 
 const PlaceOrder = (props) => {
+    const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
+    // Check if payment option was selected
     if (!cart.paymentMethod) {
         props.history.push('/');
     }
+
+    // Grab order from redux store
+    const orderCreate = useSelector(state => state.orderCreate);
+    const { loading, success, error, order } = orderCreate;
+
+    useEffect(() => {
+        if (success) {
+            props.history.push(`/order/${order.id}`);
+            dispatch({ type: ORDER_CREATE_RESET });
+        }
+    }, [success, order, props.history, dispatch]);
+
 
     const toPriceFixed = num => {
         return Number(num.toFixed(2));
@@ -18,12 +36,13 @@ const PlaceOrder = (props) => {
         cart.cartItems.reduce((a, c) => a + c.qty * parseFloat(c.price).toFixed(2), 0)
     );
 
-    cart.shippingAddressCost = cart.itemsPrice > 100 ? toPriceFixed(0) : toPriceFixed(10);
+    cart.shippingPrice = cart.itemsPrice > 100 ? toPriceFixed(0) : toPriceFixed(10);
     cart.taxPrice = toPriceFixed(0.075 * cart.itemsPrice);
-    cart.totalPrice = cart.itemsPrice + cart.shippingAddressCost + cart.taxPrice;
+    cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
 
     const placeOrderHandler = (e) => {
         e.preventDefault();
+        dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
     }
 
     return (
@@ -38,7 +57,7 @@ const PlaceOrder = (props) => {
                                 <p>
                                     <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
                                     <strong>Address:</strong> {cart.shippingAddress.address},
-                                    {cart.shippingAddress.city}, {cart.shippingAddress.zipCode}
+                                    {cart.shippingAddress.city}, {cart.shippingAddress.state} , {cart.shippingAddress.zipCode}
                                     , {cart.shippingAddress.country}
                                 </p>
                             </div>
@@ -94,7 +113,7 @@ const PlaceOrder = (props) => {
                             <li>
                                 <div className="custom-row">
                                     <div>Shipping</div>
-                                    <div>${cart.shippingAddressCost.toFixed(2)}</div>
+                                    <div>${cart.shippingPrice.toFixed(2)}</div>
                                 </div>
                             </li>
                             <li>
@@ -117,6 +136,9 @@ const PlaceOrder = (props) => {
                                     disabled={cart.cartItems.length === 0}
                                 >Place Order</button>
                             </li>
+                            {/* See if loading or error */}
+                            {loading && <Loading />}
+                            {error && <MessageBox variant="danger">{error}</MessageBox>}
                         </ul>
                     </div>
                 </div>

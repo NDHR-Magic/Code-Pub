@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../../models");
-const generateToken = require("../../../utils/utils");
+const { generateToken } = require("../../../utils/utils");
 
 // Login route
 router.post("/login", async (req, res) => {
