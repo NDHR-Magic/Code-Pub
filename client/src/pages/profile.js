@@ -79,7 +79,7 @@ function Profile() {
                                 </div>
                             </div>
                         </Right>
-                        <img src={userState.orders[0].orderItems[0].item.image} alt={userState.orders[0].orderItems[0].item.name} />
+                        {/* <img src={userState.orders[0].orderItems[0].item.image} alt={userState.orders[0].orderItems[0].item.name} /> */}
                     </Wrapper>
                 )
                 : (
