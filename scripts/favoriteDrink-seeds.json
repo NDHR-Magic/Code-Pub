@@ -1,0 +1,26 @@
+[
+    {
+        "name": "coolest drink",
+        "image": "https://via.placeholder.com/150",
+        "description": "Test favorite drink",
+        "user_id": 1
+    },
+    {
+        "name": "coolest drink",
+        "image": "https://via.placeholder.com/150",
+        "description": "Test favorite drink",
+        "user_id": 5
+    },
+    {
+        "name": "coolest drink 2",
+        "image": "https://via.placeholder.com/150",
+        "description": "Test favorite drink 2",
+        "user_id": 1
+    },
+    {
+        "name": "coolest drink 2",
+        "image": "https://via.placeholder.com/150",
+        "description": "Test favorite drink 2",
+        "user_id": 5
+    }
+]
