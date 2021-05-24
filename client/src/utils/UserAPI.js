@@ -6,4 +6,8 @@ export const signInRequest = async (email, password) => {
 
 export const registerRequest = async (first_name, last_name, username, email, password) => {
     return await axios.post("/api/users/register", { first_name, last_name, username, email, password });
+};
+
+export const getUserById = async (id) => {
+    return await axios.get(`/api/users/find/${id}`);
 }
