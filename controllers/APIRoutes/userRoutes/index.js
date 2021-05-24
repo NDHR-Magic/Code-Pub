@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../../models");
+const { User, FavoriteDrinks, Order, OrderItem, ShippingAddress, PaymentResult, Item } = require("../../../models");
 const { generateToken } = require("../../../utils/utils");
 
 // Login route
@@ -56,6 +56,26 @@ router.post('/register', async (req, res) => {
         })
     } catch (err) {
         res.status(400).json(err);
+    }
+});
+
+router.get("/find/:id", async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id, {
+            include: [{ model: FavoriteDrinks }, { model: Order, include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: PaymentResult }] }]
+        });
+
+        if (!userData) {
+            res.status(404).json({ message: "Cannot find user" });
+            return;
+        }
+
+        const user = userData.get({ plain: true });
+
+        res.status(200).json(user);
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
     }
 });
 
