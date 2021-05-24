@@ -18,5 +18,15 @@
         "name": "Cosmopolitan",
         "image": "./Images/MenuItems/Cosmo.jpg",
         "description": "Cosmo made with Vodka, Triple sec, Lime juice, and Cranberry juice with a twist of orange."
+    },
+    {
+        "name": "Mojito",
+        "image": "./Images/MenuItems/mojito.jpg",
+        "description": "Made with white rum, fresh lime, mint, sugar, and soda water."
+    },
+    {
+        "name": "Moscow Mule",
+        "image": "./Images/MenuItems/moscow-mule.jpg",
+        "description": "Classic made with vodka, ginger beer, and lime juice."
     }
 ]
