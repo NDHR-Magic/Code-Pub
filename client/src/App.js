@@ -15,7 +15,7 @@ import ShippingAddress from "./pages/ShippingAddress";
 import PaymentMethod from "./pages/PaymentMethod";
 import EventDetails from "./pages/EventDetails";
 import PlaceOrder from "./pages/PlaceOrder";
-import Profile from './pages/profile';
+import Profile from './pages/Profile';
 import Order from "./pages/Order";
 
 
@@ -58,9 +58,9 @@ function App() {
       <Route exact path="/mixer">
         <DrinkApp />
       </Route>
-      
+
       <Route exact path="/profile">
-      <Profile />
+        <Profile />
       </Route>
 
       <Route path="/login">
