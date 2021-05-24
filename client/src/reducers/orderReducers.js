@@ -31,11 +31,11 @@ export const orderDetailsReducer = (state = { loading: true }, action) => {
 export const orderPayReducer = (state = {}, action) => {
     switch (action.type) {
         case ORDER_PAY_REQUEST:
-            return { loading: true };
+            return { ...state, loading: true };
         case ORDER_PAY_SUCCESS:
-            return { loading: false, success: true };
+            return { ...state, loading: false, success: true };
         case ORDER_PAY_FAIL:
-            return { loading: false, error: action.payload };
+            return { ...state, loading: false, error: action.payload };
         case ORDER_PAY_RESET:
             return {};
         default:

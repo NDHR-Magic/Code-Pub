@@ -35,6 +35,7 @@ const Order = (props) => {
             };
             document.body.appendChild(script);
         };
+
         if (!order || successPay || (order && order.order.id !== parseInt(id))) {
             dispatch({ type: ORDER_PAY_RESET });
             dispatch(detailsOrder(id));
@@ -48,7 +49,7 @@ const Order = (props) => {
             }
         }
 
-    }, [id, dispatch, sdkReady, order]);
+    }, [id, dispatch, sdkReady, order, successPay]);
 
     const successPaymentHandler = (paymentResult) => {
         dispatch(payOrder(order.order, paymentResult));

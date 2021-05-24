@@ -44,7 +44,7 @@ export const payOrder = (order, paymentResult) => async (dispatch, getState) => 
     dispatch({ type: ORDER_PAY_REQUEST });
     try {
         const { userSignin: { userInfo } } = getState();
-        const { data } = payOrderAPI(order, paymentResult, userInfo);
+        const { data } = await payOrderAPI(order, paymentResult, userInfo);
 
         dispatch({ type: ORDER_PAY_SUCCESS, payload: data });
     } catch (error) {
