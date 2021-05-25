@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
     }
 })
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", isAuth, async (req, res) => {
     try {
         const orderData = await Order.findByPk(req.params.id, {
             include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }, { model: PaymentResult }]
