@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getAllMenuItems } from '../../actions/menuActions';
+import Button from '../Button';
 import Loading from "../LoadingScreen";
 import MessageBox from "../MessageBox";
 import "./style.css";
 
-const View = () => {
+const View = (props) => {
     const dispatch = useDispatch();
     const menuList = useSelector(state => state.menuList);
     const { loading, error, menu } = menuList;
@@ -18,6 +19,9 @@ const View = () => {
 
     return (
         <div className="menu-list">
+            <div className="custom-flex py-3">
+                <Button onClickEvent={props.goBack}>Go Back</Button>
+            </div>
             {/* Food */}
             <h2 className="center-text">Food Items</h2>
             <table className="table">
