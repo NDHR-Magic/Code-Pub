@@ -5,7 +5,7 @@ import Carousel from "../components/Carousel";
 function Home() {
     return (
         <div className="home">
-            <Header><h1>Code Pub</h1></Header>
+            <Header><div className='homePageLogo'></div></Header>
             <div className="featuredEvent">
                 <h2 className="center-text">Featured Event</h2>
             </div>

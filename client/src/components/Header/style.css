@@ -2,3 +2,10 @@
     margin: 0;
     padding: 10px 5px 6px 5px;
 }
+
+.homePageLogo {
+    height: 100px;
+    width: 200px;
+    /* background: url('../public/Images/codePubLogo.png'); */
+    background-size: cover;
+}
