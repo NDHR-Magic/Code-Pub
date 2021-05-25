@@ -73,7 +73,9 @@ function Nav() {
                                             <Link to="#signout" className="link" onClick={signoutHandler}>
                                                 Sign Out
                                             </Link>
-
+                                            {userInfo.isAdmin && (
+                                                <Link to="/admin" className="link">Admin</Link>
+                                            )}
                                         </div>
                                     ) : (
                                         <Link to="/login" className="link custom-flex flex-align">Login</Link>

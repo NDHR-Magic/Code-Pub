@@ -328,6 +328,14 @@ ul {
 }
 /* End place order */
 
+/* Admin Page */
+.adminPage{
+  width: 100%;
+  background: linear-gradient(to top left, rgb(59, 255, 72) 15%, 35%, black 80%);
+  min-height: 100vh;
+}
+/* End Admin page */
+
 @media only screen and (max-width: 900px) {
   .about-container {
     display: initial;

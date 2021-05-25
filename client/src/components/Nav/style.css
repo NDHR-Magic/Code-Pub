@@ -33,9 +33,15 @@
 }
 
 .nav-right {
-    width: 33%;
-    max-width: 240px;
+    width: 38%;
+    max-width: 290px;
     padding-right: 15px;
+    display: flex;
+    justify-content: flex-end !important;
+}
+
+.nav-right .link {
+    margin: 0 6px;
 }
 
 .nav-bar a {
@@ -86,12 +92,6 @@
 
 .links {
     display: flex;
-}
-
-.links .link,
-.link {
-    color:rgb(36, 130, 253) !important;
-    margin: 0 8px;
 }
 
 .fa-bars {

@@ -17,7 +17,9 @@ import EventDetails from "./pages/EventDetails";
 import PlaceOrder from "./pages/PlaceOrder";
 import Profile from './pages/Profile';
 import Order from "./pages/Order";
-
+import PrivateRoute from "./components/PrivateRoute";
+import AdminRoute from "./components/AdminRoute";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -44,7 +46,7 @@ function App() {
 
       <Route exact path="/placeorder" component={PlaceOrder} />
 
-      <Route path="/order/:id" component={Order} />
+      <PrivateRoute path="/order/:id" component={Order} />
 
       <Route exact path="/menu">
         <Menu />
@@ -59,9 +61,8 @@ function App() {
         <DrinkApp />
       </Route>
 
-      <Route exact path="/profile">
-        <Profile />
-      </Route>
+      <PrivateRoute exact path="/profile" component={Profile}></PrivateRoute>
+      <AdminRoute exact path="/admin" component={Admin} />
 
       <Route path="/login">
         <Login />
