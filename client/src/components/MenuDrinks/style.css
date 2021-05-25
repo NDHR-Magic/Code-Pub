@@ -13,7 +13,7 @@
   .drinkContainer {
       display: flex;
       justify-content: center;
-      max-width: 900px;
+      max-width: 1200px;
       width:100%;
       margin: 10px auto;
       flex-wrap: wrap;
