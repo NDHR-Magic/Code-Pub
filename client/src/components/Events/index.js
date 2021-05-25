@@ -7,7 +7,7 @@ const Event = props => {
             <div className="card mt-4">
                 <Link to={`/events/${props.id}`}>
                     <div className="card-header">
-                        {props.title}
+                        <h2>{props.title}</h2>
                     </div>
                 </Link>
                 <div className="card-body">
