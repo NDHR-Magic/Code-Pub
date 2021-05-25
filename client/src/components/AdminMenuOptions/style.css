@@ -1,0 +1,31 @@
+.menu-list {
+    max-width: 850px;
+    width: 95%;
+    background: rgb(209, 255, 255);
+    margin: 0 auto;
+}
+
+.menu-list .table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.menu-list table thead {
+    margin-top: 20px !important;
+}
+
+
+.menu-list td, .menu-list th {
+    border: 1px solid #111;
+    text-align: left;
+    padding: 8px;
+}
+
+.menu-list tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.menu-list .small-img {
+    width: 100px;
+    height: 100px;
+}
