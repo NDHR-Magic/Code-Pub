@@ -22,7 +22,8 @@
 
   .menuPage {
       background: linear-gradient(to top left, rgb(59, 255, 72) 15%, 35%, black 80%);
-  }
+      min-height: 100vh;
+    }
   
   .flip-card {
     background-color: transparent;
