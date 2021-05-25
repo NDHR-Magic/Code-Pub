@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import Button from "../components/Button";
 import ViewMenu from "../components/AdminMenuOptions/ViewMenu";
 import AddMenu from '../components/AdminMenuOptions/AddMenu';
+import DeleteMenu from '../components/AdminMenuOptions/DeleteMenu';
 
 const Admin = () => {
     const [hiddenState, setHiddenState] = useState("");
@@ -25,7 +26,7 @@ const Admin = () => {
     const handleMenuOptions = (e, option) => {
         e.preventDefault();
         setMenuOption(option);
-    }
+    };
 
     return (
         <div className="adminPage">
@@ -78,6 +79,10 @@ const Admin = () => {
             {/* Add menu Items */}
             {optionSelected === "menu" && menuOption === "AddMenu" && (
                 <AddMenu goBack={handleGoBack} />
+            )}
+            {/* Delete menu items */}
+            {optionSelected === "menu" && menuOption === "DeleteMenu" && (
+                <DeleteMenu goBack={handleGoBack} />
             )}
 
         </div>

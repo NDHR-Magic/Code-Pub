@@ -9,6 +9,7 @@ export const menuGetReducer = (state = {}, action) => {
         case MENU_ITEM_FAIL:
             return { ...state, loading: false, error: action.payload };
         case MENU_ITEM_RESET:
+            localStorage.removeItem("menuList");
             return {};
         default:
             return state;
@@ -18,12 +19,12 @@ export const menuGetReducer = (state = {}, action) => {
 export const createMenuItemReducer = (state = {}, action) => {
     switch (action.type) {
         case MENU_CREATE_ITEM_REQUEST:
-            return { ...state, loading: true };
+            return { loading: true };
         case MENU_CREATE_ITEM_SUCCESS:
-            return { ...state, loading: false, menuItem: action.payload };
+            return { loading: false, menuItem: action.payload };
         case MENU_CREATE_ITEM_FAIL:
-            return { ...state, loading: false, error: action.payload };
+            return { loading: false, error: action.payload };
         default:
             return state;
     }
-}
+};

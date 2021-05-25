@@ -3,6 +3,7 @@ import { createDrinkAPI, getDrinks, getFood } from "../utils/MenuAPI";
 
 export const getAllMenuItems = () => async (dispatch) => {
     dispatch({ type: MENU_ITEM_REQUEST });
+    dispatch({ type: MENU_ITEM_RESET });
     try {
         const { data: foodData } = await getFood();
         const { data: drinkData } = await getDrinks();
