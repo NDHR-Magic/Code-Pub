@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { withRouter } from "react-router-dom";
 import Button from "../components/Button";
 import ViewMenu from "../components/AdminMenuOptions/ViewMenu";
+import AddMenu from '../components/AdminMenuOptions/AddMenu';
 
 const Admin = () => {
     const [hiddenState, setHiddenState] = useState("");
@@ -70,9 +71,15 @@ const Admin = () => {
                     </div>
                 </div>
             )}
+            {/* If View Menu Items selected show ViewMenu */}
             {optionSelected === "menu" && menuOption === "ViewMenu" && (
                 <ViewMenu goBack={handleGoBack} />
             )}
+            {/* Add menu Items */}
+            {optionSelected === "menu" && menuOption === "AddMenu" && (
+                <AddMenu goBack={handleGoBack} />
+            )}
+
         </div>
     );
 };
