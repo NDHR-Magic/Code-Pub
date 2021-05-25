@@ -18,6 +18,12 @@ const Order = (props) => {
     const orderPay = useSelector(state => state.orderPay);
     const { error: errorPay, success: successPay, loading: loadingPay } = orderPay;
 
+    let userInfoObj = useSelector(state => state.userSignin);
+    if (!userInfoObj.userInfo) {
+        userInfoObj = { userInfo: { id: 0 } }
+    }
+    const { userInfo: { id: userId } } = userInfoObj;
+
     const orderDetails = useSelector(state => state.orderDetails);
     const { loading, error, order } = orderDetails;
 
@@ -55,9 +61,11 @@ const Order = (props) => {
         dispatch(payOrder(order.order, paymentResult));
     };
 
+    // Check if loading. If not render either error or order
     return loading ? (<Loading />)
+        // Check if error and render error. If not render order.
         : error ? (<MessageBox variant="danger">{error}</MessageBox>)
-            : (
+            : (userId === order.order.user.id) ? (
                 <div className="place-order">
                     <h1>Order {order.order.id}</h1>
                     <div className="custom-row top">
@@ -65,6 +73,7 @@ const Order = (props) => {
                             <ul>
                                 <li>
                                     <div className="card card-body">
+                                        {/* Shipping info */}
                                         <h2>Shipping</h2>
                                         <p>
                                             <strong>Name:</strong> {order.order.shippingAddress.full_name} <br />
@@ -72,16 +81,19 @@ const Order = (props) => {
                                     {order.order.shippingAddress.city}, {order.order.shippingAddress.state} , {order.order.shippingAddress.zip_code}
                                     , {order.order.shippingAddress.country}
                                         </p>
+                                        {/* Check if order is delivered or not */}
                                         {order.order.is_delivered ? <MessageBox variant="success">Delivered at {order.order.delivered_at}</MessageBox>
                                             : <MessageBox variant="danger">Not Delivered</MessageBox>}
                                     </div>
                                 </li>
                                 <li>
                                     <div className="card card-body">
+                                        {/* Payment info */}
                                         <h2>Payment</h2>
                                         <p>
                                             <strong>Method:</strong> {order.order.payment_method}
                                         </p>
+                                        {/* Check if order is paid or not */}
                                         {order.order.is_paid ? <MessageBox variant="success">Paid at {order.order.paid_at}</MessageBox>
                                             : <MessageBox variant="danger">Not Paid</MessageBox>}
                                     </div>
@@ -91,6 +103,7 @@ const Order = (props) => {
                                         <h2>Order Items</h2>
                                         <ul>
                                             {
+                                                // Map through ordered items and display price and quantity ordered.
                                                 order.order.orderItems.map(item => (
                                                     <li key={item.item.id}>
                                                         <div className="custom-row flex-align">
@@ -145,11 +158,13 @@ const Order = (props) => {
                                         </div>
                                     </li>
                                     {
+                                        // Check if order is paid. If not render PayPal button.
                                         !order.order.is_paid && (
                                             <li>
                                                 {!sdkReady
                                                     ? (<Loading />)
                                                     : (
+                                                        // PayPal button
                                                         <>
                                                             {errorPay && <MessageBox variant="danger">{errorPay}</MessageBox>}
                                                             {loadingPay && <Loading />}
@@ -164,7 +179,7 @@ const Order = (props) => {
                         </div>
                     </div>
                 </div>
-            );
+            ) : (<div className="center-text">Order does not belong to you</div>);
 };
 
 export default withRouter(Order);
