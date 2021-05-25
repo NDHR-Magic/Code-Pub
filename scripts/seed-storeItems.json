@@ -1,9 +1,9 @@
 [
     {
         "name": "T-shirt",
-        "image": "https://www.loveyourdog.com/wp-content/uploads/2020/04/Chihuahua-Relaxing-Indoors.jpg",
+        "image": "./Images/StoreItems/codePubTshirt.png",
         "price": 19.99,
-        "description": "This is a t-shirt",
+        "description": "Code Pub Tshirt with light-blue ombre effect ",
         "amount_in_stock": 0
     },
     {
