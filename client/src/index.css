@@ -22,7 +22,7 @@ body {
   text-align: center;
 }
 
-.hidden {display: none;}
+.hidden {display: none !important;}
 
 .success {color: #5cb85c}
 .danger {color: #d9534f}
@@ -334,6 +334,26 @@ ul {
   background: linear-gradient(to top left, rgb(59, 255, 72) 15%, 35%, black 80%);
   min-height: 100vh;
 }
+
+.admin-options {
+  background:rgb(209, 255, 255);
+  max-width: 800px;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto !important;
+  position: relative;
+  top: 75px;
+}
+
+.admin-btn {
+  border: none;
+  background: none;
+  color: #111;
+  cursor: pointer;
+  margin: 6px 5px;
+}
 /* End Admin page */
 
 @media only screen and (max-width: 900px) {
@@ -388,4 +408,5 @@ ul {
     display: flex;
     justify-content: center;
   }
+
 }
