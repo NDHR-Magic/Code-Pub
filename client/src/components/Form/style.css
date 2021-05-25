@@ -1,0 +1,39 @@
+.form-component {
+    width: 80%;
+    max-width: 700px;
+    background: #fff;
+    margin: 0 auto !important;
+}
+
+.input-component,
+.form-component select {
+    height: 40px;
+}
+
+.input-component,
+.form-component select,
+.form-component textarea {
+    background: lightcyan;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.input-component,
+.label-component {
+    display: block;
+    margin: 3px auto;
+}
+
+.form-div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form-component .form-help {
+    color: #555;
+    font-size: 14px;
+    font-style: italic;
+    padding-left: 4px;
+    line-height: 0.7em;
+    text-align: right;
+}
