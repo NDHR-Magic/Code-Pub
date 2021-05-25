@@ -7,6 +7,7 @@ import {
 } from './reducers/productReducers';
 import { userRegisterReducer, userSigninReducer } from './reducers/userReducers';
 import { orderCreateReducer, orderDetailsReducer, orderPayReducer } from "./reducers/orderReducers";
+import { menuGetReducer } from './reducers/menuReducers';
 
 const initialState = {
     userSignin: {
@@ -20,6 +21,9 @@ const initialState = {
             ? JSON.parse(localStorage.getItem('shippingAddress'))
             : {},
         paymentMethod: 'PayPal'
+    },
+    menuList: {
+        menu: localStorage.getItem("menuList") ? JSON.parse(localStorage.getItem("menuList")) : {}
     }
 };
 
@@ -31,7 +35,8 @@ const reducer = combineReducers({
     userRegister: userRegisterReducer,
     orderCreate: orderCreateReducer,
     orderDetails: orderDetailsReducer,
-    orderPay: orderPayReducer
+    orderPay: orderPayReducer,
+    menuList: menuGetReducer
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
