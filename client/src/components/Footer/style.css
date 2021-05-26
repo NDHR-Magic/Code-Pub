@@ -5,8 +5,7 @@ footer {
 }
 
 footer a {
-    /* color: #fff; */
-    color: rgb(218,112,214) ;
+    color: #fff;;
     font-size: 26px;
     text-decoration: none;
 }
