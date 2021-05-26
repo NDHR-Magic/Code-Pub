@@ -50,10 +50,10 @@ function Nav() {
                         <div id="wide-nav" className="nav-bar flex-between">
                             <div className="nav-left flex-between flex-align">
                                 <Link to="/"><img src='./Images/codePubLogo.png' height='75' width='125'></img></Link>
-                                <Link to="/menu">Menu</Link>
-                                <Link to="/events">Events</Link>
-                                <Link to="/store">Store</Link>
-                                <Link to="/mixer">Drink App</Link>
+                                <Link to="/menu" className="navMenu">Menu</Link>
+                                <Link to="/events" className="navEvents">Events</Link>
+                                <Link to="/store" className="navStore">Store</Link>
+                                <Link to="/mixer" className="navDrink">Drink App</Link>
                             </div>
 
                             <div className="nav-right flex-between flex-align">
@@ -78,7 +78,7 @@ function Nav() {
                                             )}
                                         </div>
                                     ) : (
-                                        <Link to="/login" className="link custom-flex flex-align">Login</Link>
+                                        <Link to="/login" className="link custom-flex flex-align navLogin">Login</Link>
                                     )
                                 }
                             </div>
