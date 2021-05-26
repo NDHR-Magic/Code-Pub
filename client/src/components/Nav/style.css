@@ -68,9 +68,9 @@
 }
 
 .cart-count {
-    background: rgb(50,50,50);
+    background: teal;
     /* color: #fff; */
-    color: rgb(255, 255, 255);
+    color: rgb(59, 255, 72);
     font-size: 1.2em;
     width: 37px;
     height: 37px;
@@ -99,7 +99,7 @@
     color: rgb(59, 255, 72);
 }
 .fa-shopping-cart {
-    color: rgb(218,112,214) !important;
+    color: rgb(59,255,72) !important;
 
 }
 
