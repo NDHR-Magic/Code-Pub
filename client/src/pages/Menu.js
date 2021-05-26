@@ -32,10 +32,10 @@ function Menu() {
 
     return (
         <div className="menuPage">
-            <title className="titleMenu vsCodeLightPurple">
+            <title className="titleMenu">
                 Menu
             </title>
-            <div className="changeMenu vsCodeLightYellow">See Drink Options
+            <div className="changeMenu">See Drink Options
             <input id="checkboxInput" type="checkbox" onChange={e => handleMenuChange(e)}></input>
             </div>
             {drinkSelection

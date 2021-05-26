@@ -20,6 +20,11 @@
       flex-wrap: wrap;
   }
 
+.titleMenu{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 60px;
+  color:rgb(59, 255, 72);
+}
   .menuPage {
       background: linear-gradient(to top left, rgb(59, 255, 72) 15%, 35%, black 80%);
       min-height: 100vh;
