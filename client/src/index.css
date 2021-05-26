@@ -282,6 +282,10 @@ ul {
 /* End cart page */
 
 /* Menu Page */
+.menuPage {
+  font-family: 'KoHo', sans-serif !important;
+  background: radial-gradient(circle, rgba(30,30,30,1) 68%, rgba(0,0,0,1) 100%) !important;
+}
 .titleMenu {
   display: flex;
   justify-content: center;
@@ -302,7 +306,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:white !important; 
+  color:white ; 
 }
 
 #checkboxInput {
