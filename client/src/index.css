@@ -175,12 +175,18 @@ ul {
 }
 /* End about page */
 /* Store page */
-.store {padding-bottom: 20px;}
+.store {
+  padding-bottom: 20px;
+  background: radial-gradient(circle, rgba(30,30,30,1) 68%, rgba(0,0,0,1) 100%);
+
+}
 
 .store .card {
   height: 450px;
   margin: 15px auto;
   max-width: 380px;
+  font-family: 'KoHo', sans-serif !important;
+
 }
 .store .card .card-header {font-size: 18px;}
 .store .card-body {
