@@ -1,6 +1,6 @@
 import { CART_EMPTY } from "../constants/cartConstants";
-import { ORDER_CREATE_FAIL, ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_DETAILS_FAIL, ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_PAY_REQUEST, ORDER_PAY_FAIL, ORDER_PAY_SUCCESS } from "../constants/orderConstants";
-import { createOrderAPI, getOrderInfo, payOrderAPI } from "../utils/OrderAPI";
+import { ORDER_CREATE_FAIL, ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_DETAILS_FAIL, ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_PAY_REQUEST, ORDER_PAY_FAIL, ORDER_PAY_SUCCESS, GET_ORDERS_REQUEST, GET_ORDERS_FAIL, GET_ORDERS_SUCCESS } from "../constants/orderConstants";
+import { createOrderAPI, fetchAllOrdersAPI, getOrderInfo, payOrderAPI } from "../utils/OrderAPI";
 
 export const createOrder = order => async (dispatch, getState) => {
     dispatch({ type: ORDER_CREATE_REQUEST, payload: order });
@@ -55,3 +55,19 @@ export const payOrder = (order, paymentResult) => async (dispatch, getState) => 
         dispatch({ type: ORDER_PAY_FAIL, payload: message });
     }
 };
+
+export const fetchAllOrders = () => async (dispatch, getState) => {
+    dispatch({ type: GET_ORDERS_REQUEST });
+    try {
+        const { userSignin: { userInfo } } = getState();
+        const { data } = await fetchAllOrdersAPI(userInfo);
+        dispatch({ type: GET_ORDERS_SUCCESS, payload: data });
+        console.log(data);
+    } catch (error) {
+        const message =
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message
+        dispatch({ type: GET_ORDERS_FAIL, payload: message });
+    }
+}
