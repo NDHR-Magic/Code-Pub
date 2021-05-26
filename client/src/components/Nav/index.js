@@ -26,7 +26,7 @@ function Nav() {
                         <>
                             <div id="small-nav" className="nav-bar flex-between">
                                 <div className="nav-left flex-between flex-align">
-                                    <h1>Logo</h1>
+                                    <h1><img src='./Images/codePubLogo.png' height='75' width='125'></img></h1>
                                 </div>
 
                                 <div className="nav-right flex-end flex-align">
