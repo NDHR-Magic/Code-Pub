@@ -1,7 +1,7 @@
 .nav-bar, footer {
     width: 100%;
     height: 80px;
-    background: rgb(50, 50, 50);
+    background: rgb(50,50,50);
     /* background: rgb(0,128,128);
     background: -moz-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
@@ -68,9 +68,9 @@
 }
 
 .cart-count {
-    background: teal;
+    background: rgb(50,50,50);
     /* color: #fff; */
-    color: rgb(59, 255, 72);
+    color: rgb(255, 255, 255);
     font-size: 1.2em;
     width: 37px;
     height: 37px;
@@ -99,7 +99,8 @@
     color: rgb(59, 255, 72);
 }
 .fa-shopping-cart {
-    color: rgb(59, 255, 72) !important;
+    color: rgb(218,112,214) !important;
+
 }
 
 .nav-page-extended {
@@ -132,6 +133,26 @@
     display: block;
     font-size: 1.4rem;
     color:rgb(59, 255, 72);
+}
+
+.navMenu {
+    color: rgb(130, 209, 252) !important;
+}
+
+.navEvents {
+    color: rgb(245, 245, 173) !important;
+}
+
+.navStore {
+    color: rgb(160,120,200) !important;
+}
+
+.navDrink {
+    color: rgb(238, 158, 101) !important;
+}
+
+.navLogin {
+    color: rgb(105,150,85) !important;
 }
 
 @keyframes slideIn {

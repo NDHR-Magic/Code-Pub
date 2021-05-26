@@ -68,7 +68,11 @@ ul {
   height: 125vh;
   /* background: #333; */
   /* background: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(38,122,43,1) 94%, rgba(0,94,24,1) 100%); */
-  background: radial-gradient(circle, rgba(0,0,0,1) 81%, rgba(38,122,43,1) 92%, rgba(0,94,24,1) 100%);
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 81%, rgba(38,122,43,1) 92%, rgba(0,94,24,1) 100%); */
+  /* background: radial-gradient(circle, rgba(110,108,108,1) 49%, rgba(0,0,0,1) 100%); */
+  /* background: radial-gradient(circle, rgba(50,50,50,1) 68%, rgba(0,0,0,1) 100%); */
+  /* background: rgb(30,30,30); */
+  background: radial-gradient(circle, rgba(30,30,30,1) 68%, rgba(0,0,0,1) 100%);
   font-size: 1.3em;
   margin-bottom: 60px;
   font-family: 'KoHo', sans-serif;
@@ -90,6 +94,38 @@ ul {
 
 .reactShotGlass:hover{
   color: rgb(131, 255, 107) !important; 
+}
+
+.reactShotGlass {
+  color: rgb(105,150,85) !important;
+}
+
+.vsCodeOrange {
+  color: rgb(238, 158, 101) !important;
+}
+
+.vsCodePurple {
+  color: rgb(218,112,214) !important;
+}
+
+.vsCodeDarkBlue {
+  color: rgb(45, 100, 220) !important;
+}
+
+.vsCodeLightYellow {
+  color: rgb(245, 245, 173) !important;
+}
+
+.vsCodeLightPurple {
+  color: rgb(160,120,200) !important;
+}
+
+.vsCodeGreen {
+  color: rgb(105,150,85) !important;
+}
+
+.vsCodeLightBlue {
+  color: rgb(130, 209, 252) !important;
 }
 /* End homePage */
 /* Drink App page */
