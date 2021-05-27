@@ -461,3 +461,7 @@ ul {
   }
 
 }
+
+.card{
+flex-grow: 1;
+}
