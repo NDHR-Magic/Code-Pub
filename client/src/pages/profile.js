@@ -4,7 +4,6 @@ import { getUserById } from "../utils/UserAPI";
 
 
 
-
 function Profile() {
     const [userState, setUserState] = useState({});
 
@@ -28,25 +27,23 @@ function Profile() {
             {userState.id && userInfo && userInfo.token
                 ? (
                     <div className="container-fluid text-center">
-
-
                         <h1>{userState.username}</h1>
                         <h3>{userState.first_name} {userState.last_name}</h3>
                         <div className="row">
                             <div className="col">
                                 <h1>Favorite Drinks</h1>
-                                {userState.favoriteDrinks.map(drinks => {  
-                                    return(
-                                <div className="card">
-                                    <div className="card-title text-center">
-                                        {drinks.description}
-                                    </div>
-                                    <div className="card-body">
-                                        <img src={drinks.image} height="100px" />
-                                    </div>
-                                </div>
+                                {userState.favoriteDrinks.map(drinks => {
+                                    return (
+                                        <div className="card">
+                                            <div className="card-title text-center">
+                                                {drinks.description}
+                                            </div>
+                                            <div className="card-body">
+                                                <img src={drinks.image} height="100px" />
+                                            </div>
+                                        </div>
                                     )
-                             })}
+                                })}
                             </div>
                             <div className="col">
                                 <h1>Order History</h1>
@@ -71,7 +68,6 @@ function Profile() {
                             </div>
                         </div>
                     </div>
-
                 )
                 : (
                     <h1 className="text-center">Not logged in</h1>
