@@ -15,11 +15,11 @@ import ShippingAddress from "./pages/ShippingAddress";
 import PaymentMethod from "./pages/PaymentMethod";
 import EventDetails from "./pages/EventDetails";
 import PlaceOrder from "./pages/PlaceOrder";
-import Profile from './pages/Profile';
 import Order from "./pages/Order";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminRoute from "./components/AdminRoute";
 import Admin from "./pages/Admin";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
