@@ -28,39 +28,53 @@ function Profile() {
             {userState.id && userInfo && userInfo.token
                 ? (
                     <div className="container-fluid text-center">
+
+
                         <h1>{userState.username}</h1>
                         <h3>{userState.first_name} {userState.last_name}</h3>
                         <div className="row">
                             <div className="col">
-                            <div className="card">
                                 <h1>Favorite Drinks</h1>
-                                <div className="card-title text-center">
-                                    {userState.favoriteDrinks[0].description}
+                                {userState.favoriteDrinks.map(drinks => {  
+                                    return(
+                                <div className="card">
+                                    <div className="card-title text-center">
+                                        {drinks.description}
+                                    </div>
                                     <div className="card-body">
-                                        <img src={userState.favoriteDrinks[0].image} height="100px"/>
+                                        <img src={drinks.image} height="100px" />
                                     </div>
                                 </div>
-                            </div>
+                                    )
+                             })}
                             </div>
                             <div className="col">
-                                <div className="card">
-                                    <h1>Order History</h1>
-                                    <div className="card-title text-center">
-                                        order #: {userState.orders[0].id}
-                                        <br></br>
-                                        ordered at: {userState.updatedAt}
-                                        <div className="card-body">
-                                            <img src={userState.orders[0].orderItems[0].item.image} height="100px"/>
+                                <h1>Order History</h1>
+                                {userState.orders.map(order => (
+                                    <div className="card">
+                                        <div className="card-title text-center">
+                                            order #: {order.id}
+                                            <br></br>
+                                        ordered at: {order.updatedAt}
+                                            <p>Order total: ${order.total_price}</p>
+                                            <div className="card-body">
+                                                <h3>Items Ordered</h3>
+                                                {order.orderItems.map(item => (
+                                                    <>
+                                                        <img src={item.item.image} height="100px" /> <span>{item.qty} x ${item.item.price}</span>
+                                                    </>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-              
+
                 )
                 : (
-                    <h1 className="text-center">Not logged in</h1> 
+                    <h1 className="text-center">Not logged in</h1>
                 )
             }
         </>
