@@ -20,7 +20,7 @@ function Profile() {
         }
 
         getUser();
-    }, []);
+    }, [userInfo]);
 
     return (
         <>
@@ -36,10 +36,11 @@ function Profile() {
                                     return (
                                         <div className="card">
                                             <div className="card-title text-center">
-                                                {drinks.description}
+                                                {drinks.name}
                                             </div>
                                             <div className="card-body">
-                                                <img src={drinks.image} height="100px" />
+                                                <img src={drinks.image} height="100px" alt={drinks.name} />
+                                                <p>{drinks.description}</p>
                                             </div>
                                         </div>
                                     )
@@ -58,7 +59,7 @@ function Profile() {
                                                 <h3>Items Ordered</h3>
                                                 {order.orderItems.map(item => (
                                                     <>
-                                                        <img src={item.item.image} height="100px" /> <span>{item.qty} x ${item.item.price}</span>
+                                                        <img src={item.item.image} height="100px" alt={item.item.name} /> <span>{item.qty} x ${item.item.price}</span>
                                                     </>
                                                 ))}
                                             </div>

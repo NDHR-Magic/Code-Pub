@@ -14,7 +14,7 @@ const ViewOrders = (props) => {
 
     useEffect(() => {
         dispatch(fetchAllOrders());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className="orders-list">
@@ -56,7 +56,7 @@ const ViewOrders = (props) => {
                                                     <ul className="item-ul">
                                                         {order.orderItems.map(item => (
                                                             <li key={item.id}>
-                                                                <span className="mx-3">{item.item.name}</span><span><img className="small mx-3" src={item.item.image} /></span><span>{item.qty} x ${item.item.price}</span>
+                                                                <span className="mx-3">{item.item.name}</span><span><img className="small mx-3" src={item.item.image} alt={item.item.name} /></span><span>{item.qty} x ${item.item.price}</span>
                                                             </li>
                                                         ))}
                                                     </ul>

@@ -16,7 +16,7 @@ const AddMenu = (props) => {
 
     const HandleSubmit = async (e) => {
         e.preventDefault();
-
+        // eslint-disable-next-line
         if (nameRef.current.value, typeRef.current.value, descRef.current.value) {
             if (!priceRef.current.value) {
                 priceRef.current.value = 0.00;
@@ -26,7 +26,7 @@ const AddMenu = (props) => {
             formData.append("name", nameRef.current.value);
             formData.append("desc", descRef.current.value);
             formData.append("price", parseFloat(priceRef.current.value).toFixed(2));
-            formData.append("file", fileRef.current.files[0])
+            formData.append("file", fileRef.current.files[0]);
 
             await dispatch(createMenuItem(formData, typeRef.current.value));
         }
