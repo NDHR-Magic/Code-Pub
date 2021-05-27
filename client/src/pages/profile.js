@@ -32,7 +32,15 @@ function Profile() {
                         <h3>{userState.first_name} {userState.last_name}</h3>
                         <div className="row">
                             <div className="col">
-                            <h2>Favorite Drinks</h2>
+                            <div className="card">
+                                <h1>Favorite Drinks</h1>
+                                <div className="card-title text-center">
+                                    {userState.favoriteDrinks[0].description}
+                                    <div className="card-body">
+                                        <img src={userState.favoriteDrinks[0].image} height="100px"/>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                             <div className="col">
                                 <div className="card">
