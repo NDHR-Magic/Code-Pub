@@ -152,8 +152,16 @@ ul {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: lightpink;
 }
+
+.about-page {
+  background: rgb(59, 255, 72);
+}
+
+.about-page .header {
+  max-width: 1100px !important;
+}
+
 .about-container .left,
 .about-container .right {
   width: 50%;
@@ -172,6 +180,7 @@ ul {
 .about-container .right .right-text {
   padding: 20px;
   font-size: 20px;
+  margin: 0;
 }
 /* End about page */
 /* Store page */
