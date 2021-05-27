@@ -35,7 +35,15 @@ function Profile() {
                             <h2>Favorite Drinks</h2>
                             </div>
                             <div className="col">
-                                <h2>Order History</h2>
+                                <div className="card">
+                                    <h1>Order History</h1>
+                                    <div className="card-title text-center">
+                                        order #: {userState.orders[0].id}
+                                        <div className="card-body">
+                                            <img src={userState.orders[0].orderItems[0].item.image} height="100px" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
