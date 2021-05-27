@@ -47,8 +47,10 @@ function Profile() {
                                     <h1>Order History</h1>
                                     <div className="card-title text-center">
                                         order #: {userState.orders[0].id}
+                                        <br></br>
+                                        ordered at: {userState.updatedAt}
                                         <div className="card-body">
-                                            <img src={userState.orders[0].orderItems[0].item.image} height="100px" />
+                                            <img src={userState.orders[0].orderItems[0].item.image} height="100px"/>
                                         </div>
                                     </div>
                                 </div>
