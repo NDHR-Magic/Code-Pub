@@ -1,5 +1,5 @@
 import { MENU_CREATE_ITEM_FAIL, MENU_CREATE_ITEM_REQUEST, MENU_CREATE_ITEM_SUCCESS, MENU_ITEM_FAIL, MENU_ITEM_REQUEST, MENU_ITEM_RESET, MENU_ITEM_SUCCESS } from "../constants/menuConstants"
-import { createDrinkAPI, getDrinks, getFood } from "../utils/MenuAPI";
+import { createDrinkAPI, createFoodAPI, getDrinks, getFood } from "../utils/MenuAPI";
 
 export const getAllMenuItems = () => async (dispatch) => {
     dispatch({ type: MENU_ITEM_REQUEST });
@@ -29,7 +29,8 @@ export const createMenuItem = (formData, itemType) => async (dispatch, getState)
     try {
         let menuItem;
         if (itemType === "food") {
-
+            const { data } = await createFoodAPI(formData, userInfo);
+            menuItem = data;
         } else if (itemType === "drink") {
             const { data } = await createDrinkAPI(formData, userInfo);
             menuItem = data;

@@ -16,4 +16,14 @@ export const createDrinkAPI = async (formData, userInfo) => {
             Authorization: `Bearer ${userInfo.token}`
         }
     })
-}
+};
+
+export const createFoodAPI = async (formData, userInfo) => {
+    return await fetch("/api/food", {
+        method: "POST",
+        body: formData,
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+    })
+};

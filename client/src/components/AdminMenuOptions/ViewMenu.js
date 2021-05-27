@@ -51,16 +51,17 @@ const View = (props) => {
                             ? (<MessageBox variant="danger">{error}</MessageBox>)
                             : (
                                 menu && (
-                                    menu.food.map(foodItem => (
-                                        <tr key={foodItem.id}>
-                                            <td>{foodItem.id}</td>
-                                            <td>{foodItem.name}</td>
-                                            <td>${foodItem.price}</td>
-                                            <td>{foodItem.description}</td>
-                                            <td><img className="small-img" src={foodItem.image} alt={foodItem.name} /></td>
-                                        </tr>
+                                    menu.food && (
+                                        menu.food.map(foodItem => (
+                                            <tr key={foodItem.id}>
+                                                <td>{foodItem.id}</td>
+                                                <td>{foodItem.name}</td>
+                                                <td>${foodItem.price}</td>
+                                                <td>{foodItem.description}</td>
+                                                <td><img className="small-img" src={foodItem.image} alt={foodItem.name} /></td>
+                                            </tr>
+                                        ))
                                     ))
-                                )
                             )}
                 </tbody>
             </table>
@@ -94,16 +95,17 @@ const View = (props) => {
                             ? (<MessageBox variant="danger">{error}</MessageBox>)
                             : (
                                 menu && (
-                                    menu.drink.map(drinkItem => (
-                                        <tr key={drinkItem.id}>
-                                            <td>{drinkItem.id}</td>
-                                            <td>{drinkItem.name}</td>
-                                            <td>${drinkItem.price ? drinkItem.price : " Not listed"}</td>
-                                            <td>{drinkItem.description}</td>
-                                            <td><img className="small-img" src={drinkItem.image} alt={drinkItem.name} /></td>
-                                        </tr>
+                                    menu.drink && (
+                                        menu.drink.map(drinkItem => (
+                                            <tr key={drinkItem.id}>
+                                                <td>{drinkItem.id}</td>
+                                                <td>{drinkItem.name}</td>
+                                                <td>${drinkItem.price ? drinkItem.price : " Not listed"}</td>
+                                                <td>{drinkItem.description}</td>
+                                                <td><img className="small-img" src={drinkItem.image} alt={drinkItem.name} /></td>
+                                            </tr>
+                                        ))
                                     ))
-                                )
                             )}
                 </tbody>
             </table>
