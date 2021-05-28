@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getAllMenuItems } from '../../actions/menuActions';
+import { deleteMenuItem, getAllMenuItems } from '../../actions/menuActions';
 import Button from '../Button';
 import Loading from "../LoadingScreen";
 import MessageBox from "../MessageBox";
@@ -10,14 +10,16 @@ const DeleteMenu = (props) => {
     const menuList = useSelector(state => state.menuList);
     const { loading, error, menu } = menuList;
 
+    const deletedMenuItem = useSelector(state => state.deletedMenuItem);
+    const { loading: deleteLoad, error: deleteError, deletedItem } = deletedMenuItem;
+
     useEffect(() => {
         dispatch(getAllMenuItems());
-    }, [dispatch]);
+    }, [dispatch, deletedItem]);
 
     const handleDelete = (e, type) => {
         e.preventDefault();
-        console.log(parseInt(e.target.getAttribute("data-menuID")));
-        console.log(type);
+        dispatch(deleteMenuItem(parseInt(e.target.getAttribute("data-menuid")), type));
     }
 
     return (
@@ -27,6 +29,13 @@ const DeleteMenu = (props) => {
             </div>
             {/* Food */}
             <h2 className="center-text">Food Items</h2>
+            {deleteLoad
+                ? <Loading />
+                : deleteError
+                    ? <MessageBox variant="danger">{deleteError}</MessageBox>
+                    : (
+                        <MessageBox variant="success">Successfully deleted Item</MessageBox>
+                    )}
             <table className="table">
                 <thead>
                     <tr>
@@ -48,18 +57,19 @@ const DeleteMenu = (props) => {
                             ? (<MessageBox variant="danger">{error}</MessageBox>)
                             : (
                                 menu && (
-                                    menu.food.map(foodItem => (
-                                        <tr key={foodItem.id}>
-                                            <td>{foodItem.id}</td>
-                                            <td>{foodItem.name}</td>
-                                            <td><button
-                                                data-menuID={foodItem.id}
-                                                className="btn btn-danger"
-                                                onClick={e => handleDelete(e, "food")}
-                                            >Delete</button></td>
-                                        </tr>
+                                    menu.food && (
+                                        menu.food.map(foodItem => (
+                                            <tr key={foodItem.id}>
+                                                <td>{foodItem.id}</td>
+                                                <td>{foodItem.name}</td>
+                                                <td><button
+                                                    data-menuid={foodItem.id}
+                                                    className="btn btn-danger"
+                                                    onClick={e => handleDelete(e, "food")}
+                                                >Delete</button></td>
+                                            </tr>
+                                        ))
                                     ))
-                                )
                             )}
                 </tbody>
             </table>
@@ -87,18 +97,19 @@ const DeleteMenu = (props) => {
                             ? (<MessageBox variant="danger">{error}</MessageBox>)
                             : (
                                 menu && (
-                                    menu.drink.map(drinkItem => (
-                                        <tr key={drinkItem.id}>
-                                            <td>{drinkItem.id}</td>
-                                            <td>{drinkItem.name}</td>
-                                            <td><button
-                                                data-menuID={drinkItem.id}
-                                                className="btn btn-danger"
-                                                onClick={e => handleDelete(e, "drink")}
-                                            >Delete</button></td>
-                                        </tr>
+                                    menu.drink && (
+                                        menu.drink.map(drinkItem => (
+                                            <tr key={drinkItem.id}>
+                                                <td>{drinkItem.id}</td>
+                                                <td>{drinkItem.name}</td>
+                                                <td><button
+                                                    data-menuid={drinkItem.id}
+                                                    className="btn btn-danger"
+                                                    onClick={e => handleDelete(e, "drink")}
+                                                >Delete</button></td>
+                                            </tr>
+                                        ))
                                     ))
-                                )
                             )}
                 </tbody>
             </table>

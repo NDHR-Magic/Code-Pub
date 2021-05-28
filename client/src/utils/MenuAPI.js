@@ -27,3 +27,19 @@ export const createFoodAPI = async (formData, userInfo) => {
         }
     })
 };
+
+export const deleteFoodAPI = async (id, userInfo) => {
+    return await axios.delete(`/api/food/${id}`, {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+    });
+};
+
+export const deleteDrinkAPI = async (id, userInfo) => {
+    return await axios.delete(`/api/drinks/${id}`, {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+    })
+};
