@@ -19,7 +19,7 @@ import Order from "./pages/Order";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminRoute from "./components/AdminRoute";
 import Admin from "./pages/Admin";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile";
 
 function App() {
   return (

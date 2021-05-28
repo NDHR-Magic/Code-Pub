@@ -56,7 +56,10 @@ const DrinkRandomizer = () => {
 
     return (
         <div className="drink-api">
-            <Header><h1>Partying at Home?</h1></Header>
+            <Header>
+                <h1>Not sure what to order at the Bar?</h1>
+                <p>No worries! We have got you covered!</p>
+                </Header>
 
             <form>
                 <label htmlFor="alcohol">Choose an alcohol type </label>
