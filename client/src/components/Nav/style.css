@@ -1,7 +1,8 @@
 .nav-bar, footer {
     width: 100%;
     height: 80px;
-    background: rgb(50,50,50);
+    background: linear-gradient(90deg, rgb(107, 104, 104) 0%, rgba(95,92,92,1) 16%, rgba(83,80,80,1) 28%, rgba(20,19,19,1) 56%);
+    /* background: rgb(50,50,50); */
     /* background: rgb(0,128,128);
     background: -moz-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(0,128,128,1) 15%, rgba(103,179,179,1) 68%, rgba(255,255,255,1) 100%);
