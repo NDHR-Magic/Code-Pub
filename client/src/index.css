@@ -318,7 +318,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:white !important; 
+  color:white !important;
+  font-weight: bold;
 }
 
 #checkboxInput {
