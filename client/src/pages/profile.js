@@ -69,13 +69,13 @@ function Profile() {
                             </div>
                             <div className="col">
                                     <h1>Events Attending</h1>
+                                    <h2>{userState.user.first_name} {userState.user.last_name}</h2>
                                                     {userState.events.map(data => {
                                                         return (
                                     <div>
                                         <div>
-                                            <h2>{userState.user.first_name} {userState.user.last_name}</h2>
                                             <div>
-                                                <p>{data.description}</p>
+                                                <p>{data.title}</p>
                                             </div>
                                         </div>
                                     </div>
