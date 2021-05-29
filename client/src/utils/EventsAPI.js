@@ -13,3 +13,12 @@ export const getOneEvent = async(id, userInfo)=>{
         }
     });
 };
+
+export const addUserAPI = async (id, userInfo) => {
+    return await axios.post(`/api/events/addUser/${id}`, userInfo, {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+    })
+};
+

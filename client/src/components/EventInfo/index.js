@@ -22,21 +22,27 @@ const EventInfo = (props) => {
                     <p className="alert-primary event-date">Event scheduled: {props.event_date ? props.event_date : "TBD!"}</p>
 
                     <div className="custom-flex">
-                        <button onClick={e => handleEventAttend(e)} className="btn btn-primary">
+                        <button onClick={e => props.handleEventAttend(e)} className="btn btn-primary">
                             Attend this event!
                         </button>
                     </div>
+                    <div className="custom-flex">{props.meesage ? props.message : ""}</div>
                 </div>
             </div>
             <div className="card mt-4 single-event" >
                 <div className="card-header">
-                    <h3>List of Attendies</h3>
-                    <h4>Number of people attending: ##</h4>
+                    <h3>List of Attendees</h3>
+                    <h4>Number of people attending: {props.numPeople}</h4>
                 </div>
                 <div className="card-body">
                     <ul>
                         <li>
-                            Example attendee
+                            {props.attendees && props.numPeople > 0 
+                            ? (props.attendees.map((attendee) => (
+                            <p>{attendee.username}</p>
+                                )))
+                                :<div>No one is attending just yet!</div>
+                        }
                         </li>
                     </ul>
                 </div>
