@@ -69,6 +69,11 @@ function Profile() {
                             </div>
                             <div className="col">
                                     <h1>Events Attending</h1>
+                                    <div>
+                                        <div>
+                                            <h2></h2>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
