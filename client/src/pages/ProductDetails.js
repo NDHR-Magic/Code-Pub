@@ -22,13 +22,13 @@ const ProductDetails = (props) => {
     }, [dispatch, id]);
 
     return (
-        <div className="row home">
+        <div className="home">
             {loading ? (
                 <LoadingScreen />
             ) : error ? (
                 <MessageBox variant="danger">{error}</MessageBox>
             ) : (
-                <div className="product-details-container container row">
+                <div className="product-details-container row">
                     <div className="col-lg-5">
                         {product.image[1] === "/" ? (
                             <img src={`../${product.image}`} alt={product.name} />

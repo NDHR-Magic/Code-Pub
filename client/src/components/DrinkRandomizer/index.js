@@ -55,13 +55,13 @@ const DrinkRandomizer = () => {
 
     return (
         <div className="drink-api">
-            <Header>
+            <Header textColor={"#fff"}>
                 <h1>Not sure what to order at the Bar?</h1>
                 <p>No worries! We have got you covered!</p>
             </Header>
 
             <form>
-                <label htmlFor="alcohol">Choose an alcohol type </label>
+                <label htmlFor="alcohol" className="text-light">Choose an alcohol type </label>
                 <select name="alcohol" id="alcohol" ref={selectRef}>
                     <option value="vodka">Vodka</option>
                     <option value="gin">Gin</option>
