@@ -70,9 +70,10 @@ router.get("/find/:id", async (req, res) => {
             return;
         }
 
+        const events = await userData.getEvent();
         const user = userData.get({ plain: true });
 
-        res.status(200).json(user);
+        res.status(200).json({user, events});
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
