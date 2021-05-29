@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import { useParams, withRouter } from "react-router-dom";
-import { getOneEvent } from '../utils/EventsAPI';
+import { getOneEvent, addUserAPI } from '../utils/EventsAPI';
 import EventInfo from "../components/EventInfo/";
 
 const EventDetails = (props) => {
@@ -9,6 +9,8 @@ const EventDetails = (props) => {
     const { userInfo } = userSignin;
 
     const { id } = useParams();
+
+    const [eventInfo, setEventInfo] = useState(false);
 
     if (!userInfo) {
         props.history.push(`/login?redirect=/events/${id}`);
@@ -23,26 +25,34 @@ const EventDetails = (props) => {
             }
             getEvent();
         }
-    }, [userInfo, id])
 
+        getEvent();
+    }, [userInfo, id]);
+
+    const handleEventAttend = async (e) => {
+        e.preventDefault();
+        const { data } = await addUserAPI(id, userInfo);
+        setEventInfo(data.message);
+    }
 
     return (
         <div>
             {event
                 ? (<EventInfo
-                    id={event.id}
-                    key={event.id}
-                    title={event.title}
-                    desc={event.description}
-                    dateEvent={event.event_date}
-                    dateCreated={event.createdAt}
+                    id={event.event.id}
+                    key={event.event.id}
+                    title={event.event.title}
+                    desc={event.event.description}
+                    dateEvent={event.event.event_date}
+                    dateCreated={event.event.createdAt}
+                    handleEventAttend={handleEventAttend}
+                    numPeople={event.numAttendees}
+                    attendees={event.attendees}
+                    message={eventInfo}
                 />)
                 : (<div>Event not found</div>)}
-
         </div>
     );
 };
 
 export default withRouter(EventDetails);
-
-//

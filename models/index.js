@@ -9,6 +9,7 @@ const Order = require("./Orders");
 const OrderItem = require("./OrderItem");
 const ShippingAddress = require("./ShippingAddress");
 const PaymentResult = require("./PaymentResult");
+const EventAttenders = require("./EventAttenders");
 
 User.hasMany(FavoriteDrinks, {
     foreignKey: "user_id",
@@ -33,5 +34,9 @@ ShippingAddress.belongsTo(Order, { foreignKey: "order_id" });
 
 Order.hasOne(PaymentResult, { foreignKey: "order_id", onDelete: "CASCADE" });
 PaymentResult.belongsTo(Order, { foreignKey: "order_id" });
+
+User.belongsToMany(Events, { through: EventAttenders, as: "Event", foreignKey: "user_id", onDelete: "CASCADE"});
+Events.belongsToMany(User, { through: EventAttenders, as: "Attendee", foreignKey: "event_id", onDelete: "CASCADE"});
+
 
 module.exports = { Item, User, Cart, drinkItem, FavoriteDrinks, foodItem, Events, Order, OrderItem, ShippingAddress, PaymentResult };
