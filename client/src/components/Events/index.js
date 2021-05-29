@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Event = props => {
     return (
         <div>
+            
             <div className="card mt-4">
                 <Link to={`/events/${props.id}`}>
                     <div className="card-header">
@@ -13,6 +14,7 @@ const Event = props => {
                 <div className="card-body">
                     <p className="card-text">{props.desc}</p>
                 </div>
+                    
             </div>
         </div>
     )
