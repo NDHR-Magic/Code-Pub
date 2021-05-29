@@ -15,7 +15,7 @@ function Events() {
     }, [])
 
     return (
-        <div>
+        <div className='eventContainer'>
             {events.length > 0 ? (
                 events.map((event) => (
                     <Event 

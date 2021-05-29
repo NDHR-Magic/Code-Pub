@@ -9,8 +9,8 @@ const EventInfo = (props) => {
     }
 
     return (
-        <div>
-            <div className="card mt-4 single-event">
+        <div className='eventContainer p-5'>
+            <div className="card mb-5 single-event bg-dark text-white">
 
                 <div className="card-header">
                     <h2>{props.title}</h2>
@@ -28,7 +28,7 @@ const EventInfo = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="card mt-4 single-event" >
+            <div className="card mt-5 single-event bg-dark text-white" >
                 <div className="card-header">
                     <h3>List of Attendies</h3>
                     <h4>Number of people attending: ##</h4>
