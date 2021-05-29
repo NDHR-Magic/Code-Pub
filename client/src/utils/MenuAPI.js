@@ -16,4 +16,30 @@ export const createDrinkAPI = async (formData, userInfo) => {
             Authorization: `Bearer ${userInfo.token}`
         }
     })
-}
+};
+
+export const createFoodAPI = async (formData, userInfo) => {
+    return await fetch("/api/food", {
+        method: "POST",
+        body: formData,
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+    })
+};
+
+export const deleteFoodAPI = async (id, userInfo) => {
+    return await axios.delete(`/api/food/${id}`, {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+    });
+};
+
+export const deleteDrinkAPI = async (id, userInfo) => {
+    return await axios.delete(`/api/drinks/${id}`, {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+    })
+};

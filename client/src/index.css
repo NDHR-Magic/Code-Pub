@@ -70,9 +70,10 @@ ul {
   /* background: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(38,122,43,1) 94%, rgba(0,94,24,1) 100%); */
   /* background: radial-gradient(circle, rgba(0,0,0,1) 81%, rgba(38,122,43,1) 92%, rgba(0,94,24,1) 100%); */
   /* background: radial-gradient(circle, rgba(110,108,108,1) 49%, rgba(0,0,0,1) 100%); */
-  /* background: radial-gradient(circle, rgba(50,50,50,1) 68%, rgba(0,0,0,1) 100%); */
+  /* background: radial-gradient(circle, rgba(40,40,40,1) 68%, rgba(0,0,0,1) 100%); */
   /* background: rgb(30,30,30); */
-  background: radial-gradient(circle, rgba(30,30,30,1) 68%, rgba(0,0,0,1) 100%);
+  /* background: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(38,122,43,1) 92%, rgba(0,94,24,1) 100%); */
+  background: radial-gradient(circle, rgba(20,20,20,1) 65%, rgb(31, 63, 33) 92%, rgba(0,94,24,1) 100%);
   font-size: 1.3em;
   margin-bottom: 60px;
   font-family: 'KoHo', sans-serif;
@@ -89,7 +90,6 @@ ul {
   width: 80%;
   margin: 0 auto;
   padding: 10px;
-  /* font-family: 'KoHo', sans-serif !important; */
 }
 
 .reactShotGlass:hover{
@@ -152,14 +152,26 @@ ul {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: lightpink;
 }
+
+.about-page {
+  /* background: rgb(59, 255, 72); */
+  background: radial-gradient(circle, rgba(20,20,20,1) 65%, rgb(31, 63, 33) 92%, rgba(0,94,24,1) 100%);
+  font-family: 'KoHo', sans-serif !important;
+
+
+}
+
+.about-page .header {
+  max-width: 1100px !important;
+}
+
 .about-container .left,
 .about-container .right {
   width: 50%;
   margin: 0;
   max-width: 550px;
-  background: #fff;
+  background: rgb(15, 27, 26);
 }
 
 .about-container .right img,
@@ -172,15 +184,24 @@ ul {
 .about-container .right .right-text {
   padding: 20px;
   font-size: 20px;
+  margin: 0;
+  color: white;
 }
 /* End about page */
 /* Store page */
-.store {padding-bottom: 20px;}
+.store {
+  padding-bottom: 20px;
+  /* background: radial-gradient(circle, rgba(30,30,30,1) 68%, rgba(0,0,0,1) 100%); */
+  background: radial-gradient(circle, rgba(20,20,20,1) 65%, rgb(31, 63, 33) 92%, rgba(0,94,24,1) 100%);
+  min-height: 100vh;
+}
 
 .store .card {
   height: 450px;
   margin: 15px auto;
   max-width: 380px;
+  font-family: 'KoHo', sans-serif !important;
+
 }
 .store .card .card-header {font-size: 18px;}
 .store .card-body {
@@ -218,6 +239,7 @@ ul {
 /* End Store page */
 /* product details page */
 .product-details-container {
+  /* background: radial-gradient(circle, rgba(20,20,20,1) 65%, rgb(31, 63, 33) 92%, rgba(0,94,24,1) 100%); */
   width: 90%;
   margin: 10px auto;
 }
@@ -296,7 +318,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:white !important; 
+  color:white !important;
+  font-weight: bold;
 }
 
 #checkboxInput {
@@ -445,4 +468,8 @@ ul {
     justify-content: center;
   }
 
+}
+
+.card{
+flex-grow: 1;
 }

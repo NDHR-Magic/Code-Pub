@@ -17,11 +17,15 @@ const EventDetails = (props) => {
     }
     const [event, setEvent] = useState()
     useEffect(() => {
-        const getEvent = async () => {
-            const { data } = await getOneEvent(id, userInfo)
-            console.log(data);
-            setEvent(data);
+        if (userInfo) {
+            const getEvent = async () => {
+                const { data } = await getOneEvent(id, userInfo)
+                console.log(data);
+                setEvent(data);
+            }
+            getEvent();
         }
+
         getEvent();
     }, [userInfo, id]);
 
@@ -29,9 +33,7 @@ const EventDetails = (props) => {
         e.preventDefault();
         const { data } = await addUserAPI(id, userInfo);
         setEventInfo(data.message);
-
     }
-
 
     return (
         <div>
@@ -54,4 +56,3 @@ const EventDetails = (props) => {
 };
 
 export default withRouter(EventDetails);
-

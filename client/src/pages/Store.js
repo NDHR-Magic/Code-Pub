@@ -18,10 +18,7 @@ function Store() {
     return (
         <div className="store">
             <div className="container">
-                <div className="filter-container">
-                    <Filter></Filter>
-                </div>
-                <div className="row">
+                <div className="row mb-5 p-5">
                     {loading ? (
                         <LoadingScreen />
                     ) : error ? (

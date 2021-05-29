@@ -23,7 +23,7 @@ const ProductDetails = (props) => {
     }, [dispatch, id]);
 
     return (
-        <div className="row">
+        <div className="row home">
             {loading ? (
                 <LoadingScreen />
             ) : error ? (
@@ -56,7 +56,7 @@ const ProductDetails = (props) => {
                         </ul>
                     </div>
                     <div className="product-action col-lg-3">
-                        <div className="card card-body">
+                        <div className="card card-body text-dark">
                             <ul>
                                 <li>
                                     <div className="custom-row">

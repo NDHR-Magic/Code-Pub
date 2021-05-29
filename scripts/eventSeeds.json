@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "title": " data for event 1",
-        "description": "events for day one"
+        "title": "Social Night!",
+        "description": "Trying to connect with fellow coders now that Covid restrictions have been lifted? Come in, socialize, make a new friend or two! Buy more than one drink at the same time and get the 2nd drink 10% off, 3rd drink 20% off, and so on! Please drink responsibly."
     },
     {
         "id": 2,
-        "title": " data for event 2",
-        "description": "events for day two"
+        "title": "Burgers & Beer Night",
+        "description": "Come in between the hours of 5pm-10pm and get 50% off any draft beer with the purchase of our famous React Burger. Think of it as extended happy hour!"
     },
     {
         "id": 3,
-        "title": " data for event 3",
-        "description": "events for day three"
+        "title": "Patio Tuesdays",
+        "description": "Come join us every Tuesday out on the patio and listen to live music, live LoFi sessions, and one 25% off Royal Flush shot! "
     }
 ]

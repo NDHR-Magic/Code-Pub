@@ -22,3 +22,9 @@ export const payOrderAPI = async (order, paymentResult, userInfo) => {
         headers: { Authorization: `Bearer ${userInfo.token}` }
     });
 };
+
+export const fetchAllOrdersAPI = async (userInfo) => {
+    return await axios.get("/api/orders/", {
+        headers: { Authorization: `BEARER ${userInfo.token}` }
+    });
+};

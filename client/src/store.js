@@ -6,8 +6,8 @@ import {
     productListReducer
 } from './reducers/productReducers';
 import { userRegisterReducer, userSigninReducer } from './reducers/userReducers';
-import { orderCreateReducer, orderDetailsReducer, orderPayReducer } from "./reducers/orderReducers";
-import { menuGetReducer, createMenuItemReducer } from './reducers/menuReducers';
+import { getOrdersReducer, orderCreateReducer, orderDetailsReducer, orderPayReducer } from "./reducers/orderReducers";
+import { menuGetReducer, createMenuItemReducer, deleteMenuItemReducer } from './reducers/menuReducers';
 
 const initialState = {
     userSignin: {
@@ -37,7 +37,9 @@ const reducer = combineReducers({
     orderDetails: orderDetailsReducer,
     orderPay: orderPayReducer,
     menuList: menuGetReducer,
-    menuItem: createMenuItemReducer
+    menuItem: createMenuItemReducer,
+    ordersList: getOrdersReducer,
+    deletedMenuItem: deleteMenuItemReducer
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

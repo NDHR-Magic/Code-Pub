@@ -1,12 +1,15 @@
 const router = require("express").Router();
 const { Order, OrderItem, ShippingAddress, Item, User, PaymentResult } = require("../../../models");
-const { isAuth } = require("../../../utils/utils");
+const { isAuth, isAdmin } = require("../../../utils/utils");
 
 
 // Do later
-router.get("/", async (req, res) => {
+router.get("/", isAuth, isAdmin, async (req, res) => {
     try {
-        const orderData = await Order.findAll(req.params.id, {
+        const orderData = await Order.findAll({
+            order: [
+                ["createdAt", "DESC"]
+            ],
             include: [{ model: OrderItem, include: { model: Item } }, { model: ShippingAddress }, { model: User }, { model: PaymentResult }]
         });
 

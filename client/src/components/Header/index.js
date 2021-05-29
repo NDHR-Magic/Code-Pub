@@ -3,7 +3,9 @@ import "./style.css";
 
 function Header(props) {
     return (
-        <header className="center-text header">
+        <header
+            style={{ backgroundColor: props.bgColor ? props.bgColor : "inherit", color: props.textColor ? props.textColor : "inherit" }}
+            className="center-text header">
             {props.children}
         </header>
     )

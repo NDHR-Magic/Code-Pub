@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import MenuFood from "../components/MenuFood";
 import MenuDrink from "../components/MenuDrinks";
-import MenuAPI, { getFood, getDrinks } from "../utils/MenuAPI";
+import { getFood, getDrinks } from "../utils/MenuAPI";
 
 
 function Menu() {
