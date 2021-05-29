@@ -57,5 +57,5 @@ Nathan Peek, Raquel Diaz, Hader Cortez, David Sanchez, Fidel Bello
 ![Preview](./client/public/Images/CodePub.jpg)
 
 ## Questions
-If you have further questions you can contact us at nmp14fsu@gmail.com, Rachel7113@gmail.com (insert others).
+If you have further questions you can contact us at nmp14fsu@gmail.com, Rachel7113@gmail.com, fidel_23@live.com (insert others).
 
