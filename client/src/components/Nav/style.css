@@ -29,13 +29,11 @@
 }
 
 .nav-left {
-    width: 45%;
+    width: 57%;
     padding-left: 18px;
 }
 
 .nav-right {
-    width: 38%;
-    max-width: 290px;
     padding-right: 15px;
     display: flex;
     justify-content: flex-end !important;
@@ -137,22 +135,26 @@
 
 .navMenu {
     color: rgb(130, 209, 252) !important;
+    
 }
 
 .navEvents {
     color: rgb(245, 245, 173) !important;
+    
 }
 
 .navStore {
     color: rgb(160,120,200) !important;
+    
 }
 
 .navDrink {
     color: rgb(238, 158, 101) !important;
+    
 }
 
 .navLogin {
-    color: rgb(92, 216, 100) !important;
+    color: rgb(59,255,72) !important;
 }
 
 @keyframes slideIn {
@@ -162,4 +164,8 @@
     100% {
         height: 100%;
     }
+}
+
+@media only screen and (max-width: 950px) {
+    
 }
