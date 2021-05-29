@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 const Card = (props) => {
     const noNull = [];
