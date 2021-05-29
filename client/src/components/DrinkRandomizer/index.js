@@ -71,7 +71,7 @@ const DrinkRandomizer = () => {
                     <option value="rum">Rum</option>
                 </select>
                 <div className="custom-flex">
-                    <button onClick={e => searchAPI(e)}>Get random drink!</button>
+                    <button className="btn btn-primary" onClick={e => searchAPI(e)}>Get random drink!</button>
                 </div>
             </form>
 
