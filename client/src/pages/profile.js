@@ -74,7 +74,8 @@ function Profile() {
                                     <div>
                                         <div>
                                             <div>
-                                                <p>{data.title}</p>
+                                            <h2>{data.title}</h2>
+                                                <p>Signed up: {format_date(data.createdAt)}</p>
                                             </div>
                                         </div>
                                     </div>
