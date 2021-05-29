@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Filter from "../components/Filter";
 import StoreItem from "../components/StoreItem";
 import LoadingScreen from "../components/LoadingScreen";
 import MessageBox from "../components/MessageBox";

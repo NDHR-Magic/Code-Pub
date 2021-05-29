@@ -34,7 +34,7 @@ const EventDetails = (props) => {
     }
 
     return (
-        <div>
+        <div className="eventContainer">
             {event
                 ? (<EventInfo
                     id={event.event.id}

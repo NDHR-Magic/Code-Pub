@@ -2,14 +2,8 @@ import React from 'react';
 import "./style.css";
 
 const EventInfo = (props) => {
-
-    const handleEventAttend = (e) => {
-        e.preventDefault();
-        alert("attending");
-    }
-
     return (
-        <div className='eventContainer p-5'>
+        <div>
             <div className="card mb-5 single-event bg-dark text-white">
 
                 <div className="card-header">
@@ -37,12 +31,12 @@ const EventInfo = (props) => {
                 <div className="card-body">
                     <ul>
                         <li>
-                            {props.attendees && props.numPeople > 0 
-                            ? (props.attendees.map((attendee) => (
-                            <p>{attendee.username}</p>
+                            {props.attendees && props.numPeople > 0
+                                ? (props.attendees.map((attendee) => (
+                                    <p>{attendee.username}</p>
                                 )))
-                                :<div>No one is attending just yet!</div>
-                        }
+                                : <div>No one is attending just yet!</div>
+                            }
                         </li>
                     </ul>
                 </div>
