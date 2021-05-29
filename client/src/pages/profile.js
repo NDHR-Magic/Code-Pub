@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserById } from "../utils/UserAPI";
-
-
+import {format_date} from '../helpers/formatDate'
 
 function Profile() {
     const [userState, setUserState] = useState({});
@@ -53,7 +52,7 @@ function Profile() {
                                         <div className="card-title text-center">
                                             order #: {order.id}
                                             <br></br>
-                                        ordered at: {order.updatedAt}
+                                        ordered at: {format_date(order.updatedAt)}
                                             <p>Order total: ${order.total_price}</p>
                                             <div className="card-body">
                                                 <h3>Items Ordered</h3>
