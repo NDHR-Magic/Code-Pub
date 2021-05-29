@@ -73,7 +73,7 @@ function Profile() {
                                                         return (
                                     <div>
                                         <div>
-                                            <h2>For today</h2>
+                                            <h2>{userState.user.first_name} {userState.user.last_name}</h2>
                                             <div>
                                                 <p>{data.description}</p>
                                             </div>
