@@ -71,7 +71,7 @@ function Profile() {
                                     <h1>Events Attending</h1>
                                     <div>
                                         <div>
-                                            <h2></h2>
+                                            <h2>{}</h2>
                                         </div>
                                     </div>
                             </div>
