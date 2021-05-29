@@ -67,7 +67,7 @@ ul {
   width: 100%;
   color: #fff;
   min-height: 100vh;
-  /* background: radial-gradient(circle, rgba(20,20,20,1) 65%, rgb(31, 63, 33) 92%, rgba(0,94,24,1) 100%); */
+  background: radial-gradient(circle, rgba(20,20,20,1) 65%, rgb(31, 63, 33) 92%, rgba(0,94,24,1) 100%);
   font-size: 1.3em;
   margin-bottom: 60px;
   font-family: 'KoHo', sans-serif;
