@@ -25,8 +25,6 @@ const EventDetails = (props) => {
             }
             getEvent();
         }
-
-        getEvent();
     }, [userInfo, id]);
 
     const handleEventAttend = async (e) => {
