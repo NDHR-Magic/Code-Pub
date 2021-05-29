@@ -134,6 +134,8 @@ ul {
   width: 100%;
   height: 100%;
   padding-bottom: 20px;
+  font-family: 'KoHo', sans-serif !important;
+
 }
 
 .drinkApp .drinkAppChoices {

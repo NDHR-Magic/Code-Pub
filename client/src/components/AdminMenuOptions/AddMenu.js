@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createMenuItem } from '../../actions/menuActions';
 import Button from '../Button';
 import Form from '../Form';
 import Input from '../Input';
 import Label from '../Label';
+import MessageBox from "../MessageBox";
+import Loading from "../LoadingScreen";
 
 const AddMenu = (props) => {
     const dispatch = useDispatch();
@@ -13,6 +15,9 @@ const AddMenu = (props) => {
     const descRef = useRef();
     const priceRef = useRef();
     const fileRef = useRef();
+
+    const menuItem = useSelector(state => state.menuItem);
+    const { error, loading, menuItem: newMenuItem } = menuItem;
 
     const HandleSubmit = async (e) => {
         e.preventDefault();
@@ -88,6 +93,16 @@ const AddMenu = (props) => {
                 <div className="mb-3 pb-3 custom-flex">
                     <button type="button" onClick={e => HandleSubmit(e)} className="btn btn-primary">Add Menu Item</button>
                 </div>
+                <p className="center-text">{/* Check if loading */}
+                    {loading
+                        ? (<Loading />)
+                        // Check if error
+                        : error
+                            ? (<MessageBox variant="danger">{error}</MessageBox>)
+                            // Check if menuItem and newMenuItem and then render message
+                            : menuItem && (newMenuItem) && (
+                                <MessageBox variant="success">Created menu item</MessageBox>
+                            )}</p>
             </Form>
         </div>
     );

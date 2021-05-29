@@ -1,4 +1,4 @@
-import { MENU_CREATE_ITEM_FAIL, MENU_CREATE_ITEM_REQUEST, MENU_CREATE_ITEM_SUCCESS, MENU_ITEM_FAIL, MENU_ITEM_REQUEST, MENU_ITEM_RESET, MENU_ITEM_SUCCESS } from "../constants/menuConstants";
+import { DELETE_MENU_ITEM_FAIL, DELETE_MENU_ITEM_REQUEST, DELETE_MENU_ITEM_SUCCESS, MENU_CREATE_ITEM_FAIL, MENU_CREATE_ITEM_REQUEST, MENU_CREATE_ITEM_SUCCESS, MENU_ITEM_FAIL, MENU_ITEM_REQUEST, MENU_ITEM_RESET, MENU_ITEM_SUCCESS } from "../constants/menuConstants";
 
 export const menuGetReducer = (state = {}, action) => {
     switch (action.type) {
@@ -28,3 +28,16 @@ export const createMenuItemReducer = (state = {}, action) => {
             return state;
     }
 };
+
+export const deleteMenuItemReducer = (state = {}, action) => {
+    switch (action.type) {
+        case DELETE_MENU_ITEM_REQUEST:
+            return { loading: true };
+        case DELETE_MENU_ITEM_SUCCESS:
+            return { loading: false, deletedItem: action.payload };
+        case DELETE_MENU_ITEM_FAIL:
+            return { loading: false, error: action.payload };
+        default:
+            return state;
+    }
+}

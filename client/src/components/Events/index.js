@@ -4,6 +4,7 @@ import "./style.css";
 
 const Event = props => {
     return (
+
         <div className='eventContainer'>
             <div className="card mb-5 bg-dark">
                 <Link to={`/events/${props.id}`}>
@@ -14,6 +15,7 @@ const Event = props => {
                 <div className="card-body p-5 text-white">
                     <p className="card-text">{props.desc}</p>
                 </div>
+                    
             </div>
         </div>
     )

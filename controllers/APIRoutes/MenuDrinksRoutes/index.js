@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const multer = require("multer");
+const fs = require("fs");
 const { drinkItem } = require("../../../models");
 const { isAuth, isAdmin } = require("../../../utils/utils");
 
@@ -29,6 +30,29 @@ router.post("/", isAuth, isAdmin, drinkUpload.single("file"), async (req, res) =
         res.status(201).json({ message: "Created drink menu item", drinkData });
     } catch (e) {
         res.status(500).json({ message: e });
+        console.log(e);
+    }
+});
+
+router.delete("/:id", async (req, res) => {
+    try {
+        const drinkData = await drinkItem.findByPk(req.params.id);
+
+        const deletedDrink = await drinkItem.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        const path = drinkData.image.split("/")[3];
+        fs.unlink(`./client/public/Images/MenuItems/${path}`, (err) => {
+            if (err) throw err;
+            console.log("Successfully deleted image");
+        });
+
+        res.status(200).json({ message: "Deleted drink item", deletedDrink });
+    } catch (e) {
+        res.status(500).json(e);
         console.log(e);
     }
 });
