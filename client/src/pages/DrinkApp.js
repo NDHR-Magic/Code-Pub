@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Particles from "react-tsparticles";
-import Button from "../components/Button";
 import DrinkRandomizer from "../components/DrinkRandomizer";
 import DrinkRoulette from "../components/DrinkRoulette";
 
 function Choices(props) {
     return (
         <div className="custom-flex flex-align drinkAppChoices" style={{ display: props.hidden ? "none" : "flex" }}>
-            <Button onClickEvent={props.drinkFunction}>Drink Randomizer</Button>
-            <Button onClickEvent={props.rouletteFunction}>Roulette Wheel</Button>
+            <button onClick={e => props.drinkFunction(e)} className="btn btn-primary">Drink Randomizer</button>
+            <button onClick={e => props.rouletteFunction(e)} className="btn btn-primary">Roulette Wheel</button>
         </div >
     )
 }

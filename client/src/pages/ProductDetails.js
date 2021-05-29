@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, withRouter } from "react-router-dom";
 import { getProduct } from '../actions/productActions';
-import Button from "../components/Button";
 import LoadingScreen from "../components/LoadingScreen";
 import MessageBox from "../components/MessageBox";
 
@@ -98,8 +97,8 @@ const ProductDetails = (props) => {
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <Button onClickEvent={addToCartHandler}>Add to Cart</Button>
+                                        <li className="custom-flex">
+                                            <button onClick={e => addToCartHandler(e)} className="btn btn-primary">Add to cart</button>
                                         </li>
                                     </>
                                 ) : <></>}

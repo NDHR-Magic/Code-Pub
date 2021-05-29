@@ -3,7 +3,6 @@ import { useParams, useLocation, Link, withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 import MessageBox from "../components/MessageBox";
-import Button from "../components/Button";
 
 function Cart(props) {
     const dispatch = useDispatch();
@@ -67,7 +66,7 @@ function Cart(props) {
                                                 ${item.price}
                                             </div>
                                             <div>
-                                                <Button bg={"crimson"} color={"#fff"} onClickEvent={removeFromCartHandler} args={item.product}>Remove</Button>
+                                                <button className="btn btn-danger" onClick={e => removeFromCartHandler(e, item.product)}>Remove</button>
                                             </div>
                                         </div>
                                     </li>

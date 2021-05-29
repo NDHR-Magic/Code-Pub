@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import Header from "../Header";
-import Button from "../Button";
 import Card from "../Card";
 import "./style.css";
 import { searchDrink, searchDrinkInfo } from "../../utils/CocktailApi";
@@ -59,7 +58,7 @@ const DrinkRandomizer = () => {
             <Header>
                 <h1>Not sure what to order at the Bar?</h1>
                 <p>No worries! We have got you covered!</p>
-                </Header>
+            </Header>
 
             <form>
                 <label htmlFor="alcohol">Choose an alcohol type </label>
@@ -72,7 +71,7 @@ const DrinkRandomizer = () => {
                     <option value="rum">Rum</option>
                 </select>
                 <div className="custom-flex">
-                    <Button onClickEvent={searchAPI}>Get random drink!</Button>
+                    <button onClick={e => searchAPI(e)}>Get random drink!</button>
                 </div>
             </form>
 
