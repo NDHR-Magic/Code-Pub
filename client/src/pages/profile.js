@@ -71,7 +71,10 @@ function Profile() {
                                     <h1>Events Attending</h1>
                                     <div>
                                         <div>
-                                            <h2>{}</h2>
+                                            <h2>{userState.events[0].description}</h2>
+                                            <div>
+                                                <p></p>
+                                            </div>
                                         </div>
                                     </div>
                             </div>
