@@ -15,10 +15,10 @@ function Events() {
     }, [])
 
     return (
-        <div className='eventContainer'>
+        <div className="eventContainer">
             {events.length > 0 ? (
                 events.map((event) => (
-                    <Event 
+                    <Event
                         id={event.id}
                         key={event.id}
                         title={event.title}

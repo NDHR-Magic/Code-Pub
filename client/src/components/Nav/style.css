@@ -68,7 +68,7 @@
 .cart-count {
     background: teal;
     /* color: #fff; */
-    color: rgb(59, 255, 72);
+    color: rgb(92, 216, 100);
     font-size: 1.2em;
     width: 37px;
     height: 37px;
@@ -97,7 +97,7 @@
     color: rgb(59, 255, 72);
 }
 .fa-shopping-cart {
-    color: rgb(59,255,72) !important;
+    color: rgb(92, 216, 100) !important;
 
 }
 
@@ -155,7 +155,6 @@
 
 .navLogin {
     color: rgb(59,255,72) !important;
-    
 }
 
 @keyframes slideIn {
