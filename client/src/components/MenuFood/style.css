@@ -20,11 +20,12 @@
       flex-wrap: wrap;
   }
 
-.titleMenu{
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 60px;
-  color:rgb(92, 216, 100);
-}
+  .titleMenu{
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 60px;
+    color:rgb(92, 216, 100);
+    font-weight: bold;
+  }
   .menuPage {
       /* background: linear-gradient(to top left, rgb(59, 255, 72) 15%, 35%, black 80%); */
       background: radial-gradient(circle, rgba(20,20,20,1) 65%, rgb(31, 63, 33) 92%, rgba(0,94,24,1) 100%);
