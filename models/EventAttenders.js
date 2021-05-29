@@ -15,7 +15,7 @@ EventAttenders.init({
         type: DataTypes.INTEGER,
         references: {
             model:"User",
-            key::"id"
+            key:"id"
         
         }
     },
@@ -30,7 +30,7 @@ EventAttenders.init({
 
     sequelize,
     timestamps: true,
-    modelName: "evenAttender",
+    modelName: "eventAttender",
     underscored: true,
     freeTableName: true
 
