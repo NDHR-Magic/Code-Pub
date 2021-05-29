@@ -1,12 +1,11 @@
-# Project-3
-
 # {codePub}
 
-<!-- license? -->
+![License None](https://img.shields.io/badge/Liscense-None-yellowgreen)
+
 ## Table of Contents
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
-  - [UserStory] (#User-Story)
+  - [UserStory](#User-Story)
   - [Usage](#usage)
   - [Contribution Guidelines](#contribution-guidelines)
   - [License Information](#license-information)
@@ -15,6 +14,22 @@
 
 ## Description
 
+Deployed App: https://code-pub.herokuapp.com/
+
+Code Pub is a mock site of a restaurant made with react.js and redux to manage the states. Code Pub features user login authentication with json web tokens and the ability to purchase goods from our merch store. The store currently uses sandbox mode for PayPal checkout. We post events that users can sign up for as see a list of their events on their profile page. Users can also use our fun drink app that features a random drink generator using The Cocktail API, as well as a drink roulette wheel. Checkout our menu as well. PayPal sandbox requires test info (Can't use your own credentials)
+
+Technologies used:
+- React.js
+- Redux
+- Redux-thunk
+- Multer
+- PayPal Sandbox
+- Node.js
+- JavaScript
+- Sequelize ORM
+- Jsonwebtokens npm
+- Axios
+- Framer-motion
 
 ## User Story
 
@@ -34,14 +49,13 @@ As a user, I want to use the drink application page so that when I click on the 
 
 
 ## Contribution Guidelines
-NAthan Peek, Raquel Diaz, Hader Cortez, David Sanchez, Fidel Bello
+Nathan Peek, Raquel Diaz, Hader Cortez, David Sanchez, Fidel Bello
 
 ## License Information
 ### No license
 
-<!-- ![front page](public/images/Front_page.png) -->
+![Preview](./client/public/Images/CodePub.jpg)
 
 ## Questions
-If you have further questions you can contact us at nmp14fsu@gmail.com (insert others).
+If you have further questions you can contact us at nmp14fsu@gmail.com, Rachel7113@gmail.com (insert others).
 
-Github: https://github.com/NDHR-Magic/Socializing-The-Web
