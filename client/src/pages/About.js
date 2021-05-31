@@ -10,7 +10,7 @@ function About() {
                     <p className="left-text">Code Pub was founded by five coding bootcamp students. Starting off as a mock, demo site, we decided to continue developing it after graduation till some of us decided to turn it into a reality.
                     Established June 30<sup>th</sup> 2021, Code Pub is a fairly new bar that wants to welcome new patreons to join our community with special deals and events that will be posted every month.
                     </p>
-                    <p className="left-text">Code Pub strives to provide a relaxing environemt for people to come together and enjoy a bite to eat or a few drinks,
+                    <p className="left-text">Code Pub strives to provide a relaxing environment for people to come together and enjoy a bite to eat or a few drinks,
                     all while incorporating the bar atmosphere with coding!</p>
                 </div>
                 <div className="right">
