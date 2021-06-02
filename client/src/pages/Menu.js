@@ -11,7 +11,6 @@ function Menu() {
     useEffect(() => {
         const getFoodItems = async () => {
             const { data } = await getFood()
-            console.log(data)
             setFoodSelection(data)
         }
         const getDrinkItems = async () => {
