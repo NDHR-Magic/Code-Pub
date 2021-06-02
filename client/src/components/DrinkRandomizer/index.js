@@ -56,7 +56,7 @@ const DrinkRandomizer = () => {
     return (
         <div className="drink-api">
             <Header textColor={"#fff"}>
-                <h1>Not sure what to order at the Bar?</h1>
+                <h1>Not sure what to order at the bar?</h1>
                 <p>No worries! We have got you covered!</p>
             </Header>
 
