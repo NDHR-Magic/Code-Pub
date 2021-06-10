@@ -23,7 +23,7 @@ jobs:
       - uses: actions/upload-artifact@main
         with:
           name: webpack artifacts
-          path: public/
+          path: build/
 
 
   test:
@@ -40,7 +40,7 @@ jobs:
     - uses: actions/download-artifact@main
       with:
         name: webpack artifacts
-        path: public
+        path: build
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
