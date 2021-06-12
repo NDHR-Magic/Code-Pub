@@ -6,7 +6,6 @@ import * as reactRedux from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import { AccountBox } from "./";
-import { expect } from "@jest/globals";
 
 describe("Account login and register container", () => {
     const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
