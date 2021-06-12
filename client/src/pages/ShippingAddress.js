@@ -14,9 +14,9 @@ const ShippingAddress = (props) => {
         props.history.push("/login");
     }
 
-    const [fullName, setFullName] = useState(shippingAddress.fullName)
-    const [address, setAddress] = useState(shippingAddress.address)
-    const [city, setCity] = useState(shippingAddress.city)
+    const [fullName, setFullName] = useState(shippingAddress.fullName);
+    const [address, setAddress] = useState(shippingAddress.address);
+    const [city, setCity] = useState(shippingAddress.city);
     const [state, setState] = useState(shippingAddress.state);
     const [zipCode, setZipCode] = useState(shippingAddress.zipCode)
     const [country, setCountry] = useState(shippingAddress.country)
@@ -31,7 +31,6 @@ const ShippingAddress = (props) => {
 
     const handleSelectChange = (e) => {
         setState(e.target.value);
-        console.log(e.target.value);
     }
 
     return (
