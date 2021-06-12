@@ -20,7 +20,7 @@ const EventInfo = (props) => {
                             Attend this event!
                         </button>
                     </div>
-                    <div className="custom-flex">{props.meesage ? props.message : ""}</div>
+                    <div className="custom-flex">{props.message ? props.message : ""}</div>
                 </div>
             </div>
             <div className="card mt-5 single-event bg-dark text-white" >
@@ -33,7 +33,7 @@ const EventInfo = (props) => {
                         <li>
                             {props.attendees && props.numPeople > 0
                                 ? (props.attendees.map((attendee) => (
-                                    <p>{attendee.username}</p>
+                                    <p key={attendee.id}>{attendee.username}</p>
                                 )))
                                 : <div>No one is attending just yet!</div>
                             }
