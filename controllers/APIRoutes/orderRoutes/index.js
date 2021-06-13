@@ -3,7 +3,7 @@ const { Order, OrderItem, ShippingAddress, Item, User, PaymentResult } = require
 const { isAuth, isAdmin } = require("../../../utils/utils");
 
 
-// Do later
+// Get all orders
 router.get("/", isAuth, isAdmin, async (req, res) => {
     try {
         const orderData = await Order.findAll({
@@ -21,7 +21,7 @@ router.get("/", isAuth, isAdmin, async (req, res) => {
         console.log(e);
     }
 })
-
+// Get order
 router.get("/:id", isAuth, async (req, res) => {
     try {
         const orderData = await Order.findByPk(req.params.id, {
@@ -71,6 +71,7 @@ router.post('/', isAuth, async (req, res) => {
                 });
             };
 
+            // Create address for order
             const shippingAddress = await ShippingAddress.create({
                 full_name: req.body.shippingAddress.fullName,
                 address: req.body.shippingAddress.address,
@@ -92,15 +93,33 @@ router.post('/', isAuth, async (req, res) => {
 
 router.put("/:id/pay", isAuth, async (req, res) => {
     try {
-        const order = await Order.findByPk(req.params.id);
+        const order = await Order.findByPk(req.params.id, {
+            include: { model: OrderItem }
+        });
         if (!order) {
             res.status(404).json({ message: "Order not found" });
             return;
         }
+
+        // Find the items ordered and subtract qty ordered from in stock
+        for (const orderedItem of order.orderItems) {
+            const itemOrdered = await Item.findByPk(orderedItem.item_id);
+
+            if (orderedItem.qty <= itemOrdered.amount_in_stock) {
+                itemOrdered.amount_in_stock -= orderedItem.qty;
+            } else {
+                res.status(410).json({ message: "Not enough left in stock to complete purchase" });
+                return;
+            }
+
+            await itemOrdered.save();
+        }
+        // Change order to paid and set time
         order.is_paid = true;
         order.paid_at = Date.now();
         order.paymentResult = { id: req.body.id, status: req.body.status, update_time: req.body.update_time, email_address: req.body.email_address }
 
+        // Save paypal info
         const paymentResultData = await PaymentResult.create({
             payment_id: req.body.id,
             status: req.body.status,
@@ -110,7 +129,6 @@ router.put("/:id/pay", isAuth, async (req, res) => {
         });
 
         const updatedOrder = await order.save();
-
         res.status(200).json({ message: "Order Paid", order: updatedOrder });
     } catch (err) {
         res.status(500).json(err);

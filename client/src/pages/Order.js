@@ -57,6 +57,7 @@ const Order = (props) => {
 
     }, [id, dispatch, sdkReady, order, successPay]);
 
+    // Successful payment. Called when PayPal gives onSuccess event.
     const successPaymentHandler = (paymentResult) => {
         dispatch(payOrder(order.order, paymentResult));
     };
@@ -78,8 +79,8 @@ const Order = (props) => {
                                         <p>
                                             <strong>Name:</strong> {order.order.shippingAddress.full_name} <br />
                                             <strong>Address:</strong> {order.order.shippingAddress.address},
-                                    {order.order.shippingAddress.city}, {order.order.shippingAddress.state} , {order.order.shippingAddress.zip_code}
-                                    , {order.order.shippingAddress.country}
+                                            {order.order.shippingAddress.city}, {order.order.shippingAddress.state} , {order.order.shippingAddress.zip_code}
+                                            , {order.order.shippingAddress.country}
                                         </p>
                                         {/* Check if order is delivered or not */}
                                         {order.order.is_delivered ? <MessageBox variant="success">Delivered at {order.order.delivered_at}</MessageBox>
