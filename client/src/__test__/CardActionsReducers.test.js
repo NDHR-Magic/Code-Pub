@@ -3,7 +3,7 @@ import axios from "axios";
 import thunk from "redux-thunk";
 import * as cartActions from "../actions/cartActions";
 import * as cartReducers from "../reducers/cartReducers";
-import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_PAYMENT_METHOD, CART_SAVE_SHIPPING_ADDRESS } from "../constants/cartConstants";
+import { CART_ADD_ITEM, CART_EMPTY, CART_REMOVE_ITEM, CART_SAVE_PAYMENT_METHOD, CART_SAVE_SHIPPING_ADDRESS } from "../constants/cartConstants";
 
 jest.mock("axios");
 
@@ -101,5 +101,48 @@ describe("Save payment method action", () => {
 
         const actions = store.getActions();
         expect(actions[0]).toEqual({ type: CART_SAVE_PAYMENT_METHOD, payload: "Jest PayPal" });
+    });
+});
+
+// Reducers
+describe("Cart reducer", () => {
+    const initialState = {
+        cartItems: [{ product: 1, name: "lame" }, { product: 2, name: "Cool" }]
+    }
+
+    it("Should return default state", () => {
+        expect(cartReducers.cartReducer(initialState, {})).toEqual(initialState);
+    });
+
+    it("Should return state for adding item", () => {
+        // If new item, add it to cartItems
+        expect(cartReducers.cartReducer(initialState, { type: CART_ADD_ITEM, payload: "new item" })).toEqual({
+            ...initialState, cartItems: [{ product: 1, name: "lame" }, { product: 2, name: "Cool" }, "new item"]
+        });
+        // If item already exists, updates it
+        expect(cartReducers.cartReducer(initialState, { type: CART_ADD_ITEM, payload: { product: 1, name: "UpdatedCool" } })).toEqual({
+            ...initialState, cartItems: [{ product: 1, name: "UpdatedCool" }, { name: "Cool", product: 2 }]
+        });
+    });
+
+    it("Should correctly delete cart items and empty cart", () => {
+        // Delete item 2 in initial state
+        expect(cartReducers.cartReducer(initialState, { type: CART_REMOVE_ITEM, payload: 2 })).toEqual({
+            ...initialState, cartItems: [{ product: 1, name: "lame" }]
+        });
+
+        expect(cartReducers.cartReducer(initialState, { type: CART_EMPTY })).toEqual({
+            cartItems: []
+        });
+    });
+
+    it("Should save address and payment info", () => {
+        expect(cartReducers.cartReducer(initialState, { type: CART_SAVE_SHIPPING_ADDRESS, payload: { address: "123 cool rd" } })).toEqual({
+            ...initialState, shippingAddress: { address: "123 cool rd" }
+        });
+
+        expect(cartReducers.cartReducer(initialState, { type: CART_SAVE_PAYMENT_METHOD, payload: "Jest PayPal" })).toEqual({
+            ...initialState, paymentMethod: "Jest PayPal"
+        });
     });
 });
