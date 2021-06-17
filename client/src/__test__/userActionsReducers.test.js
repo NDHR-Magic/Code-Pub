@@ -11,7 +11,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe("User actions", () => {
-    const localStorageMock = jest.spyOn(localStorage, "setItem");
+    const localStorageMock = jest.spyOn(Storage.prototype, "setItem");
     let store;
     beforeEach(() => {
         store = mockStore({ userInfo: {} });
