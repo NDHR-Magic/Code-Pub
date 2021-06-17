@@ -73,3 +73,47 @@ describe("Get single product action", () => {
         expect(actions.length).toBe(2);
     });
 });
+
+// Reducer function for getAllProducts
+describe("Product list reducer", () => {
+    const initialState = {};
+    const products = [{ name: "React Shot Glass", price: 12.99, amount_in_stock: 10 }, { name: "T-shirt", price: 8.99, amount_in_stock: 0 }];
+
+    it("Should return the default state on invalid events", () => {
+        expect(productReducers.productListReducer(initialState, {})).toEqual(initialState);
+    });
+
+    it("Should return the correct states on events", () => {
+        expect(productReducers.productListReducer(initialState, { type: PRODUCT_LIST_REQUEST })).toEqual({
+            ...initialState, loading: true
+        });
+        expect(productReducers.productListReducer(initialState, { type: PRODUCT_LIST_SUCCESS, payload: products })).toEqual({
+            ...initialState, loading: false, products: products
+        });
+        expect(productReducers.productListReducer(initialState, { type: PRODUCT_LIST_FAIL, payload: "Errors" })).toEqual({
+            ...initialState, loading: false, error: "Errors"
+        });
+    });
+});
+
+// Reducer function for getProduct
+describe("Product details reducer", () => {
+    const initialState = {};
+    const product = { id: 1, name: "React Shot Glass", price: 12.99, amount_in_stock: 10 };
+
+    it("Should return the default state on invalid events", () => {
+        expect(productReducers.productDetailsReducer({}, {})).toEqual({});
+    });
+
+    it("Should return the correct states on events", () => {
+        expect(productReducers.productDetailsReducer(initialState, { type: PRODUCT_DETAILS_REQUEST, payload: 1 })).toEqual({
+            ...initialState, loading: true
+        });
+        expect(productReducers.productDetailsReducer(initialState, { type: PRODUCT_DETAILS_SUCCESS, payload: product })).toEqual({
+            ...initialState, loading: false, product: product
+        });
+        expect(productReducers.productDetailsReducer(initialState, { type: PRODUCT_DETAILS_FAIL, payload: "Errors2" })).toEqual({
+            ...initialState, loading: false, error: "Errors2"
+        });
+    });
+});
