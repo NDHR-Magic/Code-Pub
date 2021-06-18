@@ -62,7 +62,6 @@ export const fetchAllOrders = () => async (dispatch, getState) => {
         const { userSignin: { userInfo } } = getState();
         const { data } = await fetchAllOrdersAPI(userInfo);
         dispatch({ type: GET_ORDERS_SUCCESS, payload: data });
-        console.log(data);
     } catch (error) {
         const message =
             error.response && error.response.data.message
