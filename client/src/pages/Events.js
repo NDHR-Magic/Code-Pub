@@ -7,7 +7,6 @@ function Events() {
     useEffect(() => {
         const getEvent = async () => {
             const { data } = await party()
-            console.log(data);
             setEvents(data);
         }
         getEvent();

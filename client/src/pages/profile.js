@@ -7,22 +7,20 @@ function Profile() {
     const [userState, setUserState] = useState({});
     const userInfoData = useSelector(state => state.userSignin);
     const { userInfo } = userInfoData;
-    console.log(userState);
+
     useEffect(() => {
         const getUser = async () => {
             if (userInfo) {
                 const { data } = await getUserById(userInfo.id);
                 setUserState(data);
-                console.log(data);
             }
         }
-
         getUser();
     }, [userInfo]);
 
     return (
         <>
-            { userInfo
+            {userInfo
                 ? (
                     userState && userState.user && (
                         <div className="container-fluid text-center">
@@ -52,7 +50,7 @@ function Profile() {
                                             <div className="card-title text-center">
                                                 order #: {order.id}
                                                 <br></br>
-                                        ordered at: {format_date(order.updatedAt)}
+                                                ordered at: {format_date(order.updatedAt)}
                                                 <p>Order total: ${order.total_price}</p>
                                                 <div className="card-body">
                                                     <h3>Items Ordered</h3>
