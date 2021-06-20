@@ -29,7 +29,7 @@ function Profile() {
                             <div className="row">
                                 <div className="col">
                                     <h1>Favorite Drinks</h1>
-                                    {userState.user.favoriteDrinks.map(drinks => {
+                                    {userState.user.favoriteDrinks.length > 0 ? userState.user.favoriteDrinks.map(drinks => {
                                         return (
                                             <div className="card">
                                                 <div className="card-title text-center">
@@ -41,7 +41,11 @@ function Profile() {
                                                 </div>
                                             </div>
                                         )
-                                    })}
+                                    }) : (
+                                        <div className="text-center">
+                                            User has no favorited drinks.
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="col">
                                     <h1>Order History</h1>
@@ -69,7 +73,7 @@ function Profile() {
                                 <div className="col">
                                     <h1>Events Attending</h1>
                                     <h2>{userState.user.first_name} {userState.user.last_name}</h2>
-                                    {userState.events.map(data => {
+                                    {userState.events.length > 0 ? userState.events.map(data => {
                                         return (
                                             <div>
                                                 <div>
@@ -80,7 +84,11 @@ function Profile() {
                                                 </div>
                                             </div>
                                         );
-                                    })}
+                                    }) : (
+                                        <div className="text-center">
+                                            Not attending any events.
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

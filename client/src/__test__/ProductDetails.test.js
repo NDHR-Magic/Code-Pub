@@ -82,6 +82,7 @@ describe("Product details page", () => {
 
         expect(dummyDispatch).toHaveBeenCalled();
         getByText("Jest shot glass");
+        getByText("Price: $99.99");
         expect(queryByText("Unavailable :(")).not.toBeInTheDocument();
         getByText("55 left in stock!");
         expect(queryByText("Add to cart")).toBeInTheDocument();
