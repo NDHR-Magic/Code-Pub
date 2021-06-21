@@ -15,12 +15,11 @@ const EventDetails = (props) => {
     if (!userInfo) {
         props.history.push(`/login?redirect=/events/${id}`);
     }
-    const [event, setEvent] = useState()
+    const [event, setEvent] = useState();
     useEffect(() => {
         if (userInfo) {
             const getEvent = async () => {
                 const { data } = await getOneEvent(id, userInfo)
-                console.log(data);
                 setEvent(data);
             }
             getEvent();
