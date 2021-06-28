@@ -33,7 +33,7 @@ const PaymentMethod = (props) => {
                         <div className="center-text">
                             <input type="radio" id="paypal" value="PayPal" name="paymentMethod"
                                 required
-                                checked
+                                checked={paymentMethod === "PayPal"}
                                 onChange={e => setPaymentMethod(e.target.value)}
                             />
                             <label htmlFor="paypal">PayPal</label>
@@ -41,9 +41,10 @@ const PaymentMethod = (props) => {
                         <div className="center-text">
                             <input type="radio" id="stripe" value="Stripe" name="paymentMethod"
                                 required
+                                checked={paymentMethod === "Stripe"}
                                 onChange={e => setPaymentMethod(e.target.value)}
                             />
-                            <label htmlFor="paypal">Stripe</label>
+                            <label htmlFor="stripe">Stripe</label>
                         </div>
                     </div>
                     <div className="custom-flex">

@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { act, render, waitFor } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import toBeInTheDocument from "@testing-library/jest-dom";
@@ -63,30 +63,5 @@ describe("Cart page", () => {
 
         userEvent.click(removeBtn);
         expect(dummyDispatch).toHaveBeenCalled();
-    });
-
-    test("Expect page to change to shipping after checkout btn is clicked", () => {
-        useSelectorMock.mockReturnValue({
-            cartItems: [{ product: 1, name: "React shot glass", price: 12.99 }]
-        });
-
-        const history = {
-            push: jest.fn()
-        };
-
-        const { getByText } = render(
-            <Router><Cart history={history} /></Router>
-        );
-
-        const checkoutBtn = getByText("Checkout");
-        expect(checkoutBtn.disabled).toBe(false);
-
-        userEvent.click(checkoutBtn);
-
-        // Check if props.history was called
-        setTimeout(() => {
-            expect(history.push).toHaveBeenCalled();
-            expect(history.push).toHaveBeenCalledWith('/login?redirect=shipping');
-        }, 0);
     });
 });
