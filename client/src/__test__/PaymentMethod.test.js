@@ -52,4 +52,18 @@ describe("Payment method selection page", () => {
             expect(PayPal.checked).toBe(false);
         });
     });
+
+    test("It submits and calls dispatch to save payment method", () => {
+        const { getByText } = render(
+            <Router><PaymentMethod /></Router>
+        );
+
+        const submitBtn = getByText("Submit");
+
+        act(() => {
+            userEvent.click(submitBtn);
+        });
+
+        expect(dummyDispatch).toHaveBeenCalled();
+    });
 });
