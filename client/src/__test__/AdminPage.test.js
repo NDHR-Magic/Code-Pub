@@ -49,4 +49,34 @@ describe("Admin page", () => {
             expect(getByText("View Menu Options").parentElement.parentElement.parentElement.classList.contains("hidden")).toBe(false);
         });
     });
+
+    test("View Orders button works too", async () => {
+        const { getByText } = render(
+            <Router><Admin /></Router>
+        );
+
+        const orderSelect = getByText("View Orders Options");
+
+        act(() => {
+            userEvent.click(orderSelect);
+        });
+
+        await waitFor(() => {
+            getByText("View Orders");
+        });
+
+        getByText("Delete Order?");
+        getByText("Update Order");
+        getByText("Refund");
+
+        // When go back btn is clicked, should go back to main selection
+        act(() => {
+            userEvent.click(getByText("Go Back"));
+        });
+
+        // Initial form should not be hidden
+        await waitFor(() => {
+            expect(getByText("View Menu Options").parentElement.parentElement.parentElement.classList.contains("hidden")).toBe(false);
+        });
+    });
 });

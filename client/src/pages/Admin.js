@@ -95,7 +95,7 @@ const Admin = () => {
                                 <button className="admin-btn" onClick={e => handleOrderOptions(e, "UpdateOrder")}> Update Order</button>
                             </li>
                             <li>
-                                <button className="admin-btn" onClick={e => handleOrderOptions(e, "RefundOrder")}> Refund?</button>
+                                <button className="admin-btn" onClick={e => handleOrderOptions(e, "RefundOrder")}> Refund</button>
                             </li>
                         </ul>
                         {/* Button takes you back to initial choices */}
