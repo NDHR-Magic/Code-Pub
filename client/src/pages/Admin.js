@@ -117,6 +117,7 @@ const Admin = () => {
             {optionSelected === "menu" && menuOption === "DeleteMenu" && (
                 <DeleteMenu goBack={handleGoBack} />
             )}
+
             {/* View orders */}
             {optionSelected === "order" && orderOption === "ViewOrders" && (
                 <ViewOrders goBack={handleGoBack} />
